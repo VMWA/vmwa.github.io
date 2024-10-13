@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+}
+
+html {
+    font-family: 'Barlow', sans-serif;
+    scroll-behavior: smooth;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.divider {
+    background-color: #e6e6e6;
+    height: 1px;
+    width: 100%;
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.column, .col {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+  
+.close-modal-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.open-modal-btn {
+    cursor: pointer;
+}
+  
+.close-modal-btn:hover {
+    background-color: #ccc;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+  
+.mb-1 {
+    margin-bottom: 0.25rem !important;
+}
+  
+.mb-2 {
+    margin-bottom: 0.5rem !important;
+}
+  
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+  
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+  
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+  
+.mb-auto {
+    margin-bottom: auto !important;
+}
+
+.hidden {
+    transform: translateY(-100%);
+}
+
+nav {
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.4s ease-in-out; 
+}
+
+.dark {
+    background-color: rgb(0 0 0 / 90%);
+    box-shadow: 0 0 40px 10px rgba(0,0,0,.1), 0 0 15px -7px rgba(0,0,0,.3);
+}
+
+.contact-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1;
+    background-color: #e24cc2;
+    color: white !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px -1px, rgba(0, 0, 0, 0.07) 0px 6px 10px 0px, rgba(0, 0, 0, 0.06) 0px 1px 18px 0px;
+}
+
+#nav-button {
+    display: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav a {
+    font-size: 1.125rem;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    transition: all 0.2s ease-in-out; 
+}
+
+.nav-button {
+    display: none;
+}
+
+.button {
+    border: none;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    /*display: block;*/
+    font-weight: bold;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 5px;
+    line-height: 1.4;
+    cursor: pointer;
+    outline: none;
+    background-color: none;
+}
+
+.icon-button .material-icons {
+    font-size: 1.8em;
+}
+
+h1, h2 {
+    line-height: 1.2;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 0 auto;
+    padding: 8rem;
+    text-align: center;
+    line-height: 1.6;
+    overflow: hidden;
+    min-height: 50vh;
+}
+
+section p {
+    font-size: 1.125rem;
+    text-align: center;
+    max-width: 775px;
+}
+
+section:not(#hero) h1, section:not(#hero) h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.375em;
+}
+
+section .quote {
+    position: relative;
+    display: block;
+}
+
+section .quote h3 {
+    font-size: 1.5rem;
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+section .quote small {
+    display: block;    
+    text-align: right;
+}
+
+section .quote .quote-marks {
+    opacity: 0.25;
+    margin-right: 1rem;
+}
+
+hr {
+    width: 80px;
+    height: 3px;
+    background-color: #0c5f87;
+    border: 0;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+section#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background-color: transparent;
+    color: white;
+    background: linear-gradient(to bottom, #090a16, #090a16bd);
+}
+
+section.purple {
+    background-color: #001c3be6;
+    color: white;
+}
+
+section#hero h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600 !important;
+    /* text-shadow: 2px 2px 15px #7fffff; */
+}
+
+section#hero h3 {
+    font-size: 1.75rem;
+    font-weight: 400 !important;
+    letter-spacing: 2px;
+    /* text-shadow: 2px 2px 15px #7fffff; */
+}
+
+section#hero small {
+    font-size: 0.875rem;
+    letter-spacing: 2px;
+}
+
+#logo {
+    height: 8rem;
+    width: 8rem;
+    /* border: 1px solid white; */
+    /* box-shadow: 2px 50px 200px #7fffff; */
+}
+
+.bi {
+    fill: white !important;
+}
+
+section.about {
+    background-color: #001c3be6;
+    color: white;
+}
+
+section.about .button:active {
+    opacity: 0.9;
+}
+
+section.about hr {
+    background-color: #bce1ff;
+}
+
+section.about a {
+    text-decoration: none;
+    color:#bce1ff;
+}
+
+section.about a:hover {
+    text-decoration: underline;
+}
+
+section.about a i {
+    color: white;
+    font-size: 1.8em;
+}
+
+section.technologies {
+    background-color: #01231fde;
+    color: white;
+}
+
+section.technologies hr {
+    background-color: #6fffef;
+}
+
+section.technologies .row {
+    margin-bottom: 3rem;
+}
+
+section.technologies ul li {
+    display: inline-block;
+}
+
+section.technologies ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+section.technologies ul li i {
+    color: white;
+    font-size: 2rem;
+}
+
+section#customers {
+    background-color: #f9f9f9;
+}
+
+section#customers .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+section#customers .card img {
+    height: auto;
+    max-height: 50px;
+    width: 100%;
+}
+
+section#blog {
+    background-color: #f9f9f9;
+}
+
+/* Style for the list container */
+.article-list {
+    display: flex;
+    width: 100%;
+    max-width: 775px;
+    flex-direction: column;
+    gap: 3rem; /* Space between items */
+    margin: 20px 0;
+    padding: 0;
+}
+
+/* Style for each article item (image on the left, content on the right) */
+.article-item {
+    display: flex;
+    align-items: flex-start; /* Align image and text to the top */
+}
+
+/* Style for the article image (small thumbnail on the left) */
+.article-image {
+    width: 150px; /* Fixed width for images */
+    height: 150px; /* Fixed height for images */
+    margin-right: 3rem; /* Space between image and content */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area without distortion */
+    border-radius: 10%; /* Slightly rounded corners for the image */
+}
+
+/* Grey placeholder for when no image exists */
+.no-image {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0; /* Grey background */
+    border-radius: 10%; /* Slightly rounded corners for the placeholder */
+}
+
+/* Basic styling for tag badges */
+.tag-badge {
+    display: inline-block;
+    color: #0c5f87;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin-right: 5px;
+    text-decoration: none;
+    border: 1px solid #0c5f87;
+    text-transform: capitalize;
+}
+
+.tag-badge:hover {
+    background-color: #0c5f87;
+    color: white;
+    cursor: pointer;
+}
+
+.article-tags {
+    margin-top: 1rem;
+}
+
+.article-content {
+    flex: 1;
+    text-align: left;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.article-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.article-content p {
+    color: #333;
+    text-align: left;
+}
+
+.article-content a {
+    text-decoration: none; 
+    color: #0c5f87;
+    transition: color 0.3s ease; 
+}
+
+.article-content a:hover {
+    color: #0A4D6D;
+    text-decoration: underline;
+}
+
+article section {
+    display: block;
+    padding: 0;
+    height: auto;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #00020a;
+    /* background-color: #212121; */
+    color: #ffffffcc;
+    font-size: 1em;
+    padding: 4rem;
+    text-align: center;    
+    line-height: 1.6;
+}
+
+footer a i {
+    color: #ffffffcc;
+    font-size: 1.8em;
+}
+
+footer a {
+    color: #ffffffcc;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+footer a:hover i {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+ul.social {
+    margin-bottom: 1.5rem;
+}
+
+ul.social li {
+  display: -moz-inline-stack;
+  display: inline-block;
+}
+
+/* Shooting star */
+
+span.star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+    animation: animate 3s linear;
+}
+
+span.star::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes animate {
+    0%
+    {
+        transform: rotate(345deg) translateX(0);
+        opacity: 1;
+    }
+    70%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: rotate(345deg) translateX(-1500px);
+        opacity: 0;
+    }
+}
+
+span:nth-child(1) {
+    top: -15px;
+    left: 70%;
+    right: initial;
+    animation-delay: 1s;
+    animation-duration: 5s;
+}
+
+@media (max-width: 768px) {
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    section p {
+        font-size: 1rem;
+        max-width: 775px;
+    }    
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    nav > ul {
+        display: none;
+    }
+
+    nav > ul.open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #nav-button {
+        display: inline-block;
+        height: 28px;
+    }
+
+    .contact-button {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    section {
+        padding: 4rem 3rem;
+        line-height: 1.4;
+        min-height: 70vh;
+    }
+
+    section#hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+        min-height: 70vh;
+        padding: 3rem 3rem;
+    }
+
+    /* section#hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    section#hero h3 {
+        font-size: 1.125rem;
+    }
+    
+    section#hero small {
+        font-size: 0.875rem;
+    } */
+
+    section.about {
+        background-color: #092d4a;
+    }
+
+    section.technologies {
+        background-color: #022f2a;
+    }
+
+    section.hero .logo-wrapper {
+        position: absolute;
+        bottom: -60px;
+        box-sizing: content-box;
+    }
+
+    section.hero .column:first-child {
+        display: none;
+    }
+
+    section.hero .quote .quote-marks {
+        font-size: 80px; 
+        line-height: 0; 
+        vertical-align: text-bottom;
+        margin-right: 6px;
+        color: #bce1ff;
+        opacity: 0.5;
+    }
+
+    section.hero .quote h3 {
+        line-height: 1.2;
+        font-size: 22px;
+        margin-bottom: 1rem;
+    }
+
+    section.hero .quote small {
+        font-size: 11px;
+    }
+
+    section#home-section {
+        padding-top: 8rem;
+    }
+
+    section.about .button {
+        margin-top: 0;
+    }
+
+    section.technologies .column:first-child ul {
+        margin-bottom: 2rem;
+    }
+
+    section.technologies ul li i[data-v-8dc7cce2] {
+        font-size: 32px;
+    }
+}
