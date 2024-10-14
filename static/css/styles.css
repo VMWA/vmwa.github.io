@@ -111,12 +111,7 @@ html {
     z-index: 1;
     transition: all 0.4s ease-in-out; 
 }
-
-.dark {
-    background-color: rgb(0 0 0 / 90%);
-    box-shadow: 0 0 40px 10px rgba(0,0,0,.1), 0 0 15px -7px rgba(0,0,0,.3);
-}
-
+    
 #nav-button {
     display: none;
 }
