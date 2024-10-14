@@ -11,12 +11,13 @@
 
 html {
     font-family: 'Barlow', sans-serif;
-    scroll-behavior: smooth;
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .grid-container {
@@ -93,11 +94,11 @@ html {
     margin-bottom: auto !important;
 }
 
-.hidden {
+/* .hidden {
     transform: translateY(-100%);
-}
+} */
 
-nav {
+/* nav {
     padding: 1rem;
     position: fixed;
     top: 0;
@@ -114,16 +115,6 @@ nav {
 .dark {
     background-color: rgb(0 0 0 / 90%);
     box-shadow: 0 0 40px 10px rgba(0,0,0,.1), 0 0 15px -7px rgba(0,0,0,.3);
-}
-
-.contact-button {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1;
-    background-color: #e24cc2;
-    color: white !important;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px -1px, rgba(0, 0, 0, 0.07) 0px 6px 10px 0px, rgba(0, 0, 0, 0.06) 0px 1px 18px 0px;
 }
 
 #nav-button {
@@ -159,7 +150,7 @@ nav a:hover {
 
 .nav-button {
     display: none;
-}
+} */
 
 .button {
     border: none;
@@ -309,7 +300,6 @@ section.about hr {
 }
 
 section.about a {
-    text-decoration: none;
     color:#bce1ff;
 }
 
@@ -578,29 +568,7 @@ span:nth-child(1) {
     section p {
         font-size: 1rem;
         max-width: 775px;
-    }    
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-
-    nav > ul {
-        display: none;
-    }
-
-    nav > ul.open {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #nav-button {
-        display: inline-block;
-        height: 28px;
-    }
+    }   
 
     .contact-button {
         left: 1rem;

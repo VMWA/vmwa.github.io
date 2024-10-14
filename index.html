@@ -8,24 +8,27 @@
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="./static/css/styles.css">
+        <link rel="stylesheet" href="./static/css/navbar.css">
     </head>
     <body>
 
         <nav class="nav">
-            <img id="nav-button" alt="Nav" src="./static/images/list.svg" />
+            <!-- <img id="nav-button" alt="Nav" src="./static/images/list.svg" /> -->
+            <button class="hamburger">☰</button>
+            <button class="close">✕</button>
 
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#technologies">Technologies</a></li>
-              <li><a href="#customers">Customers</a></li>
-              <li><a href="https://vilhelm-martinsson.ghost.io/">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#customers">Customers</a></li>
+                <li><a href="https://vilhelm-martinsson.ghost.io/">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
-          <main>
+        <main>
             <section id="hero">
                 <span class="star"></span>
                 <div>
@@ -160,19 +163,35 @@
                     <span>- Daniel Bell, American sociologist.</span>
                 </div>
             </section>
+        </main>
 
-            <footer>
-                <div class="container" id="contact">
-                    <div class="column">
-                        <ul class="row social">
-                            <li><a title="Email" href="mailto:vilhelmmartinsson@gmail.com"><i class="fa fa-envelope"></i></a></li>
-                            <li><a title="Github" href="https://github.com/VMWA"><i class="fab fa-github"></i></a></li>
-                            <li><a title="LinkedIn" href="https://www.linkedin.com/in/vilhelm-martinsson/"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
-                        <small>Copyright 2024 &#169; Vilhelm Martinsson Web Applications</small>
-                    </div>
+        <footer>
+            <div class="container" id="contact">
+                <div class="column">
+                    <ul class="row social">
+                        <li>
+                            <a title="Email" href="mailto:vilhelmmartinsson@gmail.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="Github" href="https://github.com/VMWA">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a title="LinkedIn" href="https://www.linkedin.com/in/vilhelm-martinsson/">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <small>Copyright 2024 &#169; Vilhelm Martinsson Web Applications</small>
                 </div>
-            </footer>
+            </div>
+        </footer>
+
+        <!-- <script src="modal.js"></script> -->
+        <script src="./static/js/navbar.js"></script>
 
         <!-- Add your JavaScript code here -->
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -181,7 +200,5 @@
             AOS.init()
         </script>
 
-        <!-- <script src="modal.js"></script> -->
-        <script src="./static/js/navbar.js"></script>
     </body>
 </html>
