@@ -276,10 +276,8 @@ section#hero small {
 }
 
 #logo {
-    height: 8rem;
-    width: 8rem;
-    /* border: 1px solid white; */
-    /* box-shadow: 2px 50px 200px #7fffff; */
+    height: 120px;
+    width: auto;
 }
 
 .bi {
@@ -579,15 +577,15 @@ span:nth-child(1) {
     section {
         padding: 4rem 3rem;
         line-height: 1.4;
-        min-height: 70vh;
+        min-height: 100vh;
     }
 
     section#hero {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 70vh;
-        min-height: 70vh;
+        height: 50vh;
+        min-height: 50vh;
         padding: 3rem 3rem;
     }
 
