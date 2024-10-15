@@ -81,10 +81,10 @@
 
       if (currentScrollY > lastScrollY && !isMouseInNav) {
         // Scrolling down and mouse not in nav area, hide the nav element
-        // nav.classList.add('hidden')
+        nav.classList.add('hidden')
       } else if (currentScrollY < lastScrollY) {
         // Scrolling up, show the nav element
-        // nav.classList.remove('hidden')
+        nav.classList.remove('hidden')
       }
 
       // Always apply .dark class unless at the top of the page
