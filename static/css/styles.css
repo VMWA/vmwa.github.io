@@ -203,6 +203,8 @@ section:not(#hero) h1, section:not(#hero) h2 {
 
 section.quote {
     background-color: #001c3be6 !important;
+    color: white;
+    min-height: 50vh;
 }
 
 .quote-container {
@@ -212,10 +214,8 @@ section.quote {
     font-family: "Edu AU VIC WA NT Guides", cursive;
 }
 
-.quote-container h3 {
+.quote-container {
     font-size: 2.25rem;
-    margin: 0;
-    padding: 0;
     font-weight: normal;
     margin-bottom: 1rem;
 }
@@ -622,7 +622,7 @@ span:nth-child(1) {
     }
 
     .quote-container .quote-marks {
-        font-size: 80px; 
+        width: 50px; 
         line-height: 0; 
         vertical-align: text-bottom;
         margin-right: 6px;
@@ -630,7 +630,8 @@ span:nth-child(1) {
         opacity: 0.8;
     }
 
-    .quote-container h3 {
+    .quote-container {
+        font-size: 1.675em;
         line-height: 1.2;
         margin-bottom: 1.5rem;
     }
