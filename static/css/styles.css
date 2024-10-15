@@ -620,7 +620,7 @@ span:nth-child(1) {
         display: none;
     }
 
-    .quote-wrapper .quote-marks {
+    .quote-container .quote-marks {
         font-size: 80px; 
         line-height: 0; 
         vertical-align: text-bottom;
@@ -629,14 +629,13 @@ span:nth-child(1) {
         opacity: 0.5;
     }
 
-    .quote-wrapper h3 {
+    .quote-container h3 {
         line-height: 1.2;
-        font-size: 22px;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
-    .quote-wrapper small {
-        font-size: 11px;
+    .quote-container small {
+        text-align: center;
     }
 
     section#home-section {
