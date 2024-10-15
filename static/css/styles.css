@@ -515,7 +515,7 @@ span.star {
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
-    animation: animate 3s linear;
+    animation: animate 10s linear;
 }
 
 span.star::before {
@@ -554,6 +554,10 @@ span:nth-child(1) {
 }
 
 @media (max-width: 768px) {
+
+    #logo {
+        height: 100px;
+    }
 
     .grid-container {
         grid-template-columns: 1fr;
