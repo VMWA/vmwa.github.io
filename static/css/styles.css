@@ -228,8 +228,9 @@ section.quote {
 }
 
 .quote-container .quote-marks {
-    opacity: 0.75;
+    color: #ffffffcc;
     margin-right: 1rem;
+    opacity: 0.8;
 }
 
 hr {
@@ -626,7 +627,7 @@ span:nth-child(1) {
         vertical-align: text-bottom;
         margin-right: 6px;
         color: #bce1ff;
-        opacity: 0.5;
+        opacity: 0.8;
     }
 
     .quote-container h3 {
