@@ -229,7 +229,8 @@ section.quote {
 
 .quote-container .quote-marks {
     color: #ffffffcc;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     opacity: 0.8;
 }
 
