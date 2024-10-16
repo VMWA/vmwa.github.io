@@ -188,7 +188,7 @@ section {
     margin: 0 auto;
     padding: 8rem;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.4;
     overflow: hidden;
     min-height: 50vh;
 }
@@ -343,13 +343,24 @@ section#customers {
     background-color: #f9f9f9;
 }
 
-section#customers .card {
+section#reviews { 
+    background-color: #f7f7f7;
+    color: black;
+}
+
+.card {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 2.5rem;
     border-radius: 0.5rem;
     background-color: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.card p {
+    font-style: italic;
 }
 
 section#customers .card img {
@@ -559,6 +570,10 @@ span:nth-child(1) {
 }
 
 @media (max-width: 768px) {
+
+    html {
+        background-attachment: scroll;
+    }
 
     main {
         /* scroll-snap-type: y mandatory; */
