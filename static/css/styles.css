@@ -17,11 +17,11 @@ html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow-y: scroll;
 }
 
 main {
     height: auto;
-    overflow-y: auto;
 }
 
 .grid-container {

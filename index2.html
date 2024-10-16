@@ -26,13 +26,8 @@
             z-index: 100;
         }
 
-        main {
-            padding-top: 50px; /* To account for the fixed nav */
-
-        }
-
         section {
-            height: 100vh;
+            height: 50vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,12 +53,13 @@
         /* Media Query for small mobile devices */
         @media (max-width: 600px) {
             main {
+                height: 100vh;
                 scroll-snap-type: y mandatory; /* Enable scroll snapping on small screens */
-                height: 100vh; /* Full height of viewport */
                 overflow-y: scroll; /* Allow scrolling */
             }
 
             section {
+                height: 100vh;
                 scroll-snap-align: start; /* Snap to start */
             }
         }
