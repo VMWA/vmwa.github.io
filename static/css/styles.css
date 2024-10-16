@@ -17,8 +17,11 @@ html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+}
+
+main {
+    height: auto;
+    overflow-y: auto;
 }
 
 .grid-container {
@@ -557,6 +560,12 @@ span:nth-child(1) {
 
 @media (max-width: 768px) {
 
+    main {
+        scroll-snap-type: y mandatory; /* Enable scroll snapping on small screens */
+        height: 100vh; /* Full height of viewport */
+        overflow-y: scroll; /* Allow scrolling */
+    }
+
     #logo {
         height: 100px;
     }
@@ -579,7 +588,8 @@ span:nth-child(1) {
     section {
         padding: 4rem 3rem;
         line-height: 1.4;
-        min-height: 100vh;
+        height: 100vh;
+        scroll-snap-align: start;
     }
 
     section#hero {
@@ -587,7 +597,6 @@ span:nth-child(1) {
         align-items: center;
         justify-content: center;
         height: 100vh;
-        min-height: 50vh;
         padding: 3rem 3rem;
         font-size: 0.875em;
     }

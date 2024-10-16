@@ -42,7 +42,6 @@
     cursor: pointer;
 }
 
-
 @media (min-width: 769px) {
     .dark {
         background-color: rgb(0 0 0 / 95%);
