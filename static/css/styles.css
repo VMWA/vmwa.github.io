@@ -561,9 +561,9 @@ span:nth-child(1) {
 @media (max-width: 768px) {
 
     main {
-        scroll-snap-type: y mandatory; /* Enable scroll snapping on small screens */
-        height: 100vh; /* Full height of viewport */
-        overflow-y: scroll; /* Allow scrolling */
+        /* scroll-snap-type: y mandatory; */
+        /* height: 100vh;  */
+        overflow-y: scroll; 
     }
 
     #logo {
@@ -588,8 +588,8 @@ span:nth-child(1) {
     section {
         padding: 4rem 3rem;
         line-height: 1.4;
-        height: 100vh;
-        scroll-snap-align: start;
+        min-height: 100vh;
+        /* scroll-snap-align: start; */
     }
 
     section#hero {
