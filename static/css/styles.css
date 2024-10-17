@@ -320,21 +320,23 @@ section.technologies hr {
     background-color: #6fffef;
 }
 
-section.technologies .row {
-    margin-bottom: 3rem;
+section.technologies .technologies-container {
+    display: flex;
+    margin-bottom: 2.5rem;
 }
 
-section.technologies ul li {
-    display: inline-block;
+section.technologies .technologies-container .column {
+    display: flex;
+    flex-direction: row;
 }
 
-section.technologies ul li a {
+section.technologies .technologies-container a {
     color: white;
     text-decoration: none;
     margin: 1rem;
 }
 
-section.technologies ul li i {
+section.technologies .technologies-container i {
     color: white;
     font-size: 2rem;
 }
@@ -611,13 +613,9 @@ span:nth-child(1) {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        min-height: 100vh;
         padding: 3rem 3rem;
         font-size: 0.875em;
-    }
-
-    section.quote {
-        min-height: 100vh;
     }
 
     section.about {
@@ -626,6 +624,12 @@ span:nth-child(1) {
 
     section.technologies {
         background-color: #022f2a;
+    }
+
+    section.technologies .technologies-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     section.hero .logo-wrapper {
