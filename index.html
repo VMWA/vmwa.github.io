@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="./static/css/navbar.css">
         <link rel="preconnect" href="https://unpkg.com">
         <link rel="preconnect" href="https://use.fontawesome.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600&family=Barlow:wght@400&display=swap" rel="stylesheet">
     </head>
     <body>
 
@@ -32,17 +35,17 @@
         <main>
             <section id="hero">
                 <span class="star"></span>
-                <div class="mb-2" data-aos="fade" data-aos-duration="1500">
-                    <img class="mb-2" id="logo" alt="Logo" src="./static/images/vmwa-background.svg" style="max-width: 60%;" />
-                    <h1 class="mb-1">Vilhelm Martinsson</h1>
-                    <h3 class="mb-2">WEB APPLICATIONS</h3>
-                    <small style="font-size: 0.8em;">www.vilhelmmartinsson.com</small>             
+                <div class="mb-4" data-aos="fade" data-aos-duration="1500">
+                    <img class="mb-4" id="logo" alt="Logo" src="./static/images/vmwa-background.svg" style="max-width: 30%;" />
+                    <h1 class="mb-3 hero-title">Vilhelm Martinsson</h1>
+                    <h2 class="mb-4 hero-subtitle">WEB APPLICATIONS</h2>
+                    <small class="hero-domain">www.vilhelmmartinsson.com</small>             
                 </div> 
             </section>
 
             <section id="home">
-                <h1 class="mb-3">Web applications for the modern age...</h1>
-                <hr>
+                <h1 class="mb-5">Web applications for the modern age...</h1>
+                <hr class="mb-5">
                 
                 <div class="home-content">
                     <div class="text-block mt-4">
@@ -703,6 +706,42 @@
 
             .contact-section hr {
                 background-color: rgba(255, 255, 255, 0.8);
+            }
+
+            .hero-title {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                font-size: 2.4rem;
+            }
+
+            .hero-subtitle {
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
+                letter-spacing: 0.2em;
+                font-size: 1.1rem;
+            }
+
+            .hero-domain {
+                font-family: 'Barlow', sans-serif;
+                font-weight: 400;
+                letter-spacing: 0.1em;
+                font-size: 0.8rem;
+                opacity: 0.8;
+            }
+
+            @media (max-width: 768px) {
+                .hero-title {
+                    font-size: 1.8rem;
+                }
+                
+                .hero-subtitle {
+                    font-size: 0.9rem;
+                }
+
+                .hero-domain {
+                    font-size: 0.7rem;
+                }
             }
         </style>
 
