@@ -365,7 +365,8 @@ section#reviews {
 
 .card:hover {
     transform: translateY(-5px) !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 1.5s ease;
 }
 
 .card p {
