@@ -379,7 +379,35 @@
             .services-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
+                gap: 2.5rem;  /* Increased gap between cards */
+                padding: 1rem;
+            }
+
+            .service-card {
+                padding: 2.5rem;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            }
+
+            @media (max-width: 1024px) {
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 2rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .services-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
             }
 
             .service-details {
@@ -400,41 +428,6 @@
                 border-bottom: 1px solid #eee;
             }
 
-            .service-card {
-                padding: 2rem;
-                position: relative;
-            }
-
-            /* Add vertical separators */
-            .service-card:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                right: 0;
-                top: 15%;
-                height: 70%;
-                width: 1px;
-                background: #eee;
-            }
-
-            /* Adjust separator display for different screen sizes */
-            @media (max-width: 1024px) {
-                .services-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                .service-card:nth-child(2n)::after {
-                    display: none;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .services-grid {
-                    grid-template-columns: 1fr;
-                }
-                .service-card::after {
-                    display: none;
-                }
-            }
-            
             .service-card i {
                 color: #333;  /* Darker, more visible color */
                 margin-bottom: 1.5rem;
