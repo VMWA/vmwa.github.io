@@ -517,6 +517,16 @@ footer a:hover i {
     color: white;
 }
 
+footer hr {
+    background-color: #ffffffcc;
+    border: 0;
+    height: 3px;
+    width: 80px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
 ul {
     list-style: none;
 }

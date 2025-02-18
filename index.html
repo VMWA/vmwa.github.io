@@ -288,9 +288,12 @@
         </main>
 
         <footer>
-            <div id="contact">
-                <div class="column">
-                    <ul class="row social">
+            <div id="contact" class="contact-section">
+                <h2 class="mb-4" data-aos="fade-left">Contact</h2>
+                <hr class="section-divider">
+                <p>Have a project in mind? Let's discuss how we can help your business grow.</p>
+                <div class="social-container">
+                    <ul class="social-links">
                         <li>
                             <a title="Email" href="mailto:vilhelmmartinsson@gmail.com">
                                 <i class="fa fa-envelope"></i>
@@ -307,6 +310,8 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div class="copyright">
                     <small>Copyright 2025 &#169; Vilhelm Martinsson Web Applications</small>
                 </div>
             </div>
@@ -655,6 +660,50 @@
 
             .nav {
                 transition: transform 0.3s ease-in-out;
+            }
+
+            .contact-section {
+                text-align: center;
+                padding: 4rem 2rem;
+                display: flex;
+                flex-direction: column;
+                min-height: 300px;
+            }
+
+            .social-container {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 2rem 0;  /* Added to create equal spacing */
+            }
+
+            .social-links {
+                display: flex;
+                gap: 2rem;
+                list-style: none;
+                padding: 0;
+            }
+
+            .social-links a {
+                font-size: 1.5rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .copyright {
+                padding-bottom: 1rem;
+            }
+
+            .contact-section h2 {
+                font-size: 2rem;  /* Match other section headings */
+                font-weight: 400; /* Match other section headings */
+            }
+
+            .contact-section hr {
+                background-color: rgba(255, 255, 255, 0.8);
             }
         </style>
 
