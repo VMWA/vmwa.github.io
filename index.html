@@ -73,36 +73,51 @@
             <section class="services" id="services">
                 <h2 class="mb-4" data-aos="fade-left">Services</h2>
                 <hr>
-                <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div class="services-grid">
                     <div class="service-card" data-aos="fade-up">
-                        <i class="fas fa-code fa-2x mb-4"></i>
-                        <h3>Full-Stack Development</h3>
-                        <p>End-to-end web applications with modern technologies</p>
-                        <ul class="service-details">
-                            <li>Custom web applications</li>
-                            <li>E-commerce solutions</li>
-                            <li>Content Management Systems</li>
-                        </ul>
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Frontend Development</h3>
+                            <p>Modern, responsive user interfaces</p>
+                            <ul class="service-details">
+                                <li>Vue.js / Nuxt.js applications</li>
+                                <li>Responsive design</li>
+                                <li>Interactive UI/UX</li>
+                                <li>Progressive Web Apps</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-mobile-alt fa-2x mb-4"></i>
-                        <h3>Responsive Design</h3>
-                        <p>Mobile-first websites that work on all devices</p>
-                        <ul class="service-details">
-                            <li>Adaptive layouts</li>
-                            <li>Cross-browser compatibility</li>
-                            <li>Performance optimization</li>
-                        </ul>
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Backend Development</h3>
+                            <p>Robust server-side solutions</p>
+                            <ul class="service-details">
+                                <li>Python / Django applications</li>
+                                <li>RESTful APIs</li>
+                                <li>Database architecture</li>
+                                <li>Cloud deployment</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-database fa-2x mb-4"></i>
-                        <h3>Backend Solutions</h3>
-                        <p>APIs, databases, and server-side applications</p>
-                        <ul class="service-details">
-                            <li>RESTful API development</li>
-                            <li>Database architecture</li>
-                            <li>Cloud deployment</li>
-                        </ul>
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>AI Integration</h3>
+                            <p>LLM-powered solutions</p>
+                            <ul class="service-details">
+                                <li>OpenAI API integration</li>
+                                <li>Custom LLM implementations</li>
+                                <li>AI-powered features</li>
+                                <li>Intelligent automation</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -287,6 +302,12 @@
         </script>
 
         <style>
+            .services-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
             .service-details {
                 list-style: none;
                 padding: 0;
@@ -307,6 +328,37 @@
 
             .service-card {
                 padding: 2rem;
+                position: relative;
+            }
+
+            /* Add vertical separators */
+            .service-card:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 15%;
+                height: 70%;
+                width: 1px;
+                background: #eee;
+            }
+
+            /* Adjust separator display for different screen sizes */
+            @media (max-width: 1024px) {
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                .service-card:nth-child(2n)::after {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .services-grid {
+                    grid-template-columns: 1fr;
+                }
+                .service-card::after {
+                    display: none;
+                }
             }
 
             .card {
@@ -321,16 +373,14 @@
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
             }
 
-            @media (max-width: 768px) {
-                .services-grid {
-                    grid-template-columns: 1fr !important;
-                }
+            .service-card i {
+                color: #333;  /* Darker, more visible color */
+                margin-bottom: 1.5rem;
+                transition: color 0.3s ease;
             }
 
-            @media (max-width: 1024px) {
-                .services-grid {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                }
+            .service-card:hover i {
+                color: #000;  /* Full black on hover */
             }
 
             @media (max-width: 768px) {
@@ -359,6 +409,35 @@
             #hero div {
                 transition: transform 0.3s ease-out;
                 transform-style: preserve-3d;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: #f8f9fa;  /* Light gray background */
+                margin: 0 auto 1.5rem;
+                transition: all 0.3s ease;
+                border: 1px solid #eee;  /* Subtle border */
+            }
+
+            .service-icon i {
+                font-size: 1.8rem;
+                color: #333;  /* Dark gray for better contrast */
+                transition: transform 0.3s ease;
+            }
+
+            .service-card:hover .service-icon {
+                background: #fff;  /* Pure white on hover */
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  /* Subtle shadow on hover */
+                transform: translateY(-3px);
+            }
+
+            .service-card:hover .service-icon i {
+                color: #000;  /* Darker on hover */
             }
         </style>
 
