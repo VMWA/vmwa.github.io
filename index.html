@@ -34,7 +34,7 @@
             <section id="hero">
                 <span class="star"></span>
                 <div class="mb-2" data-aos="fade" data-aos-duration="1500">
-                    <img class="mb-2" id="logo" alt="Logo" src="./static/images/vmwa-background.svg" style="max-width: 80%; height: auto;" />
+                    <img class="mb-2" id="logo" alt="Logo" src="./static/images/vmwa-background.svg" style="max-width: 60%;" />
                     <h1 class="mb-1">Vilhelm Martinsson</h1>
                     <h3 class="mb-2">WEB APPLICATIONS</h3>
                     <small style="font-size: 0.8em;">www.vilhelmmartinsson.com</small>             
@@ -256,6 +256,33 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 AOS.init();
+                
+                const hero = document.querySelector('#hero div');
+                let timeout;
+                
+                document.addEventListener('mousemove', (e) => {
+                    const { clientX, clientY } = e;
+                    const { innerWidth, innerHeight } = window;
+                    
+                    // Calculate rotation with more pronounced values
+                    const xRotation = (clientY / innerHeight - 0.5) * 15;
+                    const yRotation = (clientX / innerWidth - 0.5) * -15;
+                    const scale = 1 + (clientY / innerHeight) * 0.1;
+                    
+                    // Snappier transition for more responsive feel
+                    hero.style.transition = 'transform 0.2s ease-out';
+                    hero.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg) scale(${scale})`;
+                    
+                    clearTimeout(timeout);
+                });
+                
+                // Smooth reset when mouse leaves
+                document.addEventListener('mouseleave', () => {
+                    timeout = setTimeout(() => {
+                        hero.style.transition = 'transform 0.4s ease-in-out';
+                        hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+                    }, 50);
+                });
             });
         </script>
 
@@ -327,6 +354,11 @@
                 .reviews .card {
                     padding: 1.5rem;
                 }
+            }
+
+            #hero div {
+                transition: transform 0.3s ease-out;
+                transform-style: preserve-3d;
             }
         </style>
 
