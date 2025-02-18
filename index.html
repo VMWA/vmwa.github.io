@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="./static/css/styles.css">
         <link rel="stylesheet" href="./static/css/navbar.css">
+        <link rel="preconnect" href="https://unpkg.com">
+        <link rel="preconnect" href="https://use.fontawesome.com">
     </head>
     <body>
 
         <nav class="nav">
-            <button class="hamburger">☰</button>
-            <button class="close">✕</button>
+            <button class="hamburger" aria-label="Open menu">☰</button>
+            <button class="close" aria-label="Close menu">✕</button>
 
             <ul>
                 <li><a href="#home" class="scroll-to-section">Home</a></li>
@@ -71,21 +73,45 @@
             <section class="services" id="services">
                 <h2 class="mb-4" data-aos="fade-left">Services</h2>
                 <hr>
-                <h3 data-aos="fade-up">
-                    Front-End Development / Back-End Development / Full-Stack Development
-                </h3>
-                <br>
-                <p data-aos="fade-up">
-                    Web Design · Web Applications · Minimum Viable Products · Rest-Api's · E-Commerce · GIS/Map · UX/UI · Email · SEO · CRUD · Blog · CMS · CRM · Web Scrapers · Command Line Interfaces · Scripts · Data Analysis · Cloud solutions · Hosting · Server Administration
-                </p>
-                <br>
+                <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                    <div class="service-card" data-aos="fade-up">
+                        <i class="fas fa-code fa-2x mb-4"></i>
+                        <h3>Full-Stack Development</h3>
+                        <p>End-to-end web applications with modern technologies</p>
+                        <ul class="service-details">
+                            <li>Custom web applications</li>
+                            <li>E-commerce solutions</li>
+                            <li>Content Management Systems</li>
+                        </ul>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-mobile-alt fa-2x mb-4"></i>
+                        <h3>Responsive Design</h3>
+                        <p>Mobile-first websites that work on all devices</p>
+                        <ul class="service-details">
+                            <li>Adaptive layouts</li>
+                            <li>Cross-browser compatibility</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-database fa-2x mb-4"></i>
+                        <h3>Backend Solutions</h3>
+                        <p>APIs, databases, and server-side applications</p>
+                        <ul class="service-details">
+                            <li>RESTful API development</li>
+                            <li>Database architecture</li>
+                            <li>Cloud deployment</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             <section class="technologies" id="technologies">
                 <h2 class="mb-4" data-aos="fade-left">Technologies</h2>
                 <hr>
-                <div class="technologies-container">
-                    <div class="column">
+                <div class="technologies-container" role="list">
+                    <div class="column" role="listitem">
                         <div title="Python" data-aos="fade-left" data-aos-offset="10">
                             <a href="https://www.python.org/"><i class="fab fa-python"></i></a>
                         </div>
@@ -96,7 +122,7 @@
                             <a href="https://www.vuejs.org/"><i class="fab fa-vuejs"></i></a>
                         </div>
                     </div>
-                    <div class="column">
+                    <div class="column" role="listitem">
                         <div title="Node" data-aos="fade-left" data-aos-offset="150">
                             <a href="https://nodejs.org/en/"><i class="fab fa-node-js"></i></a>
                         </div>
@@ -175,7 +201,7 @@
                     <div class="mb-3 card" data-aos="fade-up">
                         <p class="mb-3">
                             <span>
-                                "Vilhelm has been helping us develop a custom content management system using Django, Django REST, Celery, and third-party APIs. It allows us to manage multiple sites, schedule articles, and generate images with ease. The ongoing, iterative approach has been smooth, and we’re very pleased with the result."
+                                "Vilhelm has been helping us develop a custom content management system using Django, Django REST, Celery, and third-party APIs. It allows us to manage multiple sites, schedule articles, and generate images with ease. The ongoing, iterative approach has been smooth, and we're very pleased with the result."
                             </span>
                         </p>
                         <small><strong>- Anders Gärme, Webbstream</strong></small>
@@ -225,15 +251,54 @@
             </div>
         </footer>
 
-        <!-- <script src="modal.js"></script> -->
-        <script src="./static/js/navbar.js"></script>
-
-        <!-- Add your JavaScript code here -->
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+        <script defer src="./static/js/navbar.js"></script>
+        <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
-            AOS.init()
+            document.addEventListener('DOMContentLoaded', function() {
+                AOS.init();
+            });
         </script>
+
+        <style>
+            .service-details {
+                list-style: none;
+                padding: 0;
+                margin-top: 1rem;
+                font-size: 0.9em;
+                color: #666;
+            }
+
+            .service-details li {
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+                border-top: 1px solid #eee;
+            }
+
+            .service-details li:last-child {
+                border-bottom: 1px solid #eee;
+            }
+
+            .service-card {
+                padding: 2rem;
+                transition: transform 0.3s ease;
+            }
+
+            .service-card:hover {
+                transform: translateY(-5px);
+            }
+
+            @media (max-width: 1024px) {
+                .services-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .services-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
 
     </body>
 </html>
