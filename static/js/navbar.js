@@ -6,6 +6,11 @@
   let lastScrollY = window.scrollY;
   let isMouseInNav = false;
 
+  // Add mouse position tracking
+  document.addEventListener('mousemove', (e) => {
+      isMouseInNav = nav.contains(e.target) || e.clientY <= 74;
+  });
+
   // Function to handle scroll events
   function handleScroll() {
       const currentScrollY = window.scrollY;
@@ -13,8 +18,8 @@
       if (currentScrollY > lastScrollY && !isMouseInNav) {
           // Scrolling down and mouse not in nav area, hide the nav element
           nav.classList.add('hidden');
-      } else if (currentScrollY < lastScrollY) {
-          // Scrolling up, show the nav element
+      } else if (currentScrollY < lastScrollY || isMouseInNav) {
+          // Scrolling up or mouse in nav area, show the nav element
           nav.classList.remove('hidden');
       }
 
