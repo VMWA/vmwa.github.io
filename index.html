@@ -2,13 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="icon" href="./static/images/favicon.png">
         <title>Vilhelm Martinsson Web Applications | www.vilhelmmartinsson.com | Full-stack Web Development</title>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="./static/css/styles.css">
-        <link rel="stylesheet" href="./static/css/navbar.css">
         <link rel="preconnect" href="https://unpkg.com">
         <link rel="preconnect" href="https://use.fontawesome.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,27 +15,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600&family=Barlow:wght@400&display=swap" rel="stylesheet">
     </head>
     <body>
+        <!-- Hamburger button for mobile -->
+        <button class="hamburger" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
 
         <nav class="nav">
-            <button class="hamburger" aria-label="Open menu">☰</button>
-            <button class="close" aria-label="Close menu">✕</button>
-
-            <ul>
-                <li><a href="#home" class="scroll-to-section">Home</a></li>
-                <li><a href="#about" class="scroll-to-section">About</a></li>
-                <li><a href="#services" class="scroll-to-section">Services</a></li>
-                <li><a href="#technologies" class="scroll-to-section">Tech</a></li>
-                <li><a href="#customers" class="scroll-to-section">Customers</a></li>
-                <li><a href="#reviews" class="scroll-to-section">Reviews</a></li>
-                <li><a href="#contact" class="scroll-to-section">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#technologies" class="nav-link">Tech</a></li>
+                    <li><a href="#customers" class="nav-link">Customers</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </nav>
 
         <main>
             <section id="hero">
                 <span class="star"></span>
                 <div class="mb-4" data-aos="fade" data-aos-duration="1500">
-                    <img class="mb-4" id="logo" alt="Logo" src="./static/images/vmwa-background.svg" style="max-width: 30%;" />
+                    <img id="logo" alt="Logo" src="./static/images/vmwa-background.svg" />
                     <h1 class="mb-3 hero-title">Vilhelm Martinsson</h1>
                     <h2 class="mb-4 hero-subtitle">WEB APPLICATIONS</h2>
                     <small class="hero-domain">www.vilhelmmartinsson.com</small>             
@@ -320,430 +322,7 @@
             </div>
         </footer>
 
-        <script defer src="./static/js/navbar.js"></script>
-        <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                AOS.init();
-                
-                // Add nav scroll behavior
-                let lastScrollTop = 0;
-                const nav = document.querySelector('.nav');
-                const scrollThreshold = 100;
-                let isMouseNearNav = false;
-                let isNavigating = false;  // Navigation flag
-                
-                // Track mouse position relative to nav
-                document.addEventListener('mousemove', (e) => {
-                    if (e.clientY <= 74) {  // Specific height check
-                        isMouseNearNav = true;
-                        nav.style.transform = 'translateY(0)';
-                    } else {
-                        isMouseNearNav = false;
-                        // Don't hide nav here - let scroll event handle it
-                    }
-                });
-                
-                // Handle navigation clicks
-                document.querySelectorAll('.scroll-to-section').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        isNavigating = true;
-                        setTimeout(() => {
-                            isNavigating = false;
-                        }, 2000);
-                    });
-                });
-                
-                window.addEventListener('scroll', () => {
-                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                    const mouseY = event?.clientY ?? 0;  // Get current mouse Y position
-                    
-                    // Always check current mouse position
-                    if (mouseY <= 74) {
-                        isMouseNearNav = true;
-                        nav.style.transform = 'translateY(0)';
-                        return;
-                    }
-                    
-                    if (currentScroll > scrollThreshold && !isMouseNearNav && !isNavigating) {
-                        if (currentScroll > lastScrollTop) {
-                            // Scrolling down
-                            nav.style.transform = 'translateY(-100%)';
-                        } else {
-                            // Scrolling up
-                            nav.style.transform = 'translateY(0)';
-                        }
-                    } else {
-                        // At the top or during navigation
-                        nav.style.transform = 'translateY(0)';
-                    }
-                    
-                    lastScrollTop = currentScroll;
-                });
-            });
-        </script>
-
-        <style>
-            .services-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2.5rem;  /* Increased gap between cards */
-                padding: 1rem;
-            }
-
-            .service-card {
-                padding: 2.5rem;
-                background: white;
-                border-radius: 12px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-                transition: all 0.5s ease-in-out;
-            }
-
-            .service-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            }
-
-            @media (max-width: 1024px) {
-                .services-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 2rem;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .services-grid {
-                    grid-template-columns: 1fr;
-                    gap: 1.5rem;
-                }
-            }
-
-            .service-details {
-                list-style: none;
-                padding: 0;
-                margin-top: 1rem;
-                font-size: 0.9em;
-                color: #666;
-            }
-
-            .service-details li {
-                margin: 0.5rem 0;
-                padding: 0.5rem;
-                border-top: 1px solid #eee;
-            }
-
-            .service-details li:last-child {
-                border-bottom: 1px solid #eee;
-            }
-
-            .service-card i {
-                color: #333;  /* Darker, more visible color */
-                margin-bottom: 1.5rem;
-                transition: color 0.3s ease;
-            }
-
-            .service-card:hover i {
-                color: #000;  /* Full black on hover */
-            }
-
-            @media (max-width: 768px) {
-                section {
-                    padding: 3rem 1rem;  /* More compact sections on mobile */
-                }
-                
-                h1 {
-                    font-size: 1.8rem;
-                }
-                
-                h2 {
-                    font-size: 1.5rem;
-                }
-                
-                .customers .grid-container {
-                    gap: 1rem;
-                    padding: 0.5rem;
-                }
-                
-                .reviews .card {
-                    padding: 1.5rem;
-                }
-            }
-
-            #hero div {
-                transition: transform 0.3s ease-out;
-                transform-style: preserve-3d;
-            }
-
-            .service-icon {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background: #f8f9fa;  /* Light gray background */
-                margin: 0 auto 1.5rem;
-                transition: all 0.3s ease;
-                border: 1px solid #eee;  /* Subtle border */
-            }
-
-            .service-icon i {
-                font-size: 1.8rem;
-                color: #333;  /* Dark gray for better contrast */
-                transition: transform 0.3s ease;
-            }
-
-            .service-card:hover .service-icon {
-                background: #fff;  /* Pure white on hover */
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  /* Subtle shadow on hover */
-                transform: translateY(-3px);
-            }
-
-            .service-card:hover .service-icon i {
-                color: #000;  /* Darker on hover */
-            }
-
-            .home-content {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .quote-block {
-                font-size: 1.25rem;
-                font-weight: 600;
-                text-align: center;
-                padding: 2rem;
-                background-color: #f8f9fa;
-                border-radius: 8px;
-                margin: 2rem 0;
-            }
-
-            .text-block {
-                line-height: 1.8;
-                font-size: 1.1rem;
-            }
-
-            .mb-3 {
-                margin-bottom: 1.5rem;
-            }
-
-            .mb-4 {
-                margin-bottom: 2rem;
-            }
-
-            @media (max-width: 768px) {
-                .quote-block {
-                    font-size: 1.1rem;
-                    padding: 1.5rem;
-                }
-
-                .text-block {
-                    font-size: 1rem;
-                }
-            }
-
-            .kanji-breakdown {
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                margin-top: 0.5rem;
-                flex-wrap: wrap;
-            }
-
-            .kanji-item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                padding: 0.75rem;
-                background: rgba(255, 255, 255, 0.7);
-                border-radius: 6px;
-                min-width: 60px;
-            }
-
-            .kanji {
-                font-size: 1.5rem;
-                margin-bottom: 0.3rem;
-                color: #000;
-            }
-
-            .reading {
-                font-size: 0.8rem;
-                color: #666;
-                margin-bottom: 0.2rem;
-            }
-
-            .meaning {
-                font-size: 0.75rem;
-                color: #444;
-                font-style: italic;
-            }
-
-            .japanese-proverb {
-                margin-top: 4rem;
-                padding: 2.5rem;
-                background-color: #f8f9fa;  /* Light gray/silver background */
-                border-radius: 8px;         /* Rounded corners */
-            }
-
-            .kanji-main {
-                font-size: 2rem;
-                margin-bottom: 0.3rem;
-                letter-spacing: 0.1em;
-            }
-
-            .romaji {
-                color: #666;
-                font-size: 0.9rem;
-                margin-bottom: 1rem;
-            }
-
-            .translation {
-                font-size: 1.2rem;
-                color: #333;
-                margin-bottom: 0.3rem;
-                font-style: italic;
-            }
-
-            .attribution {
-                color: #666;
-                font-size: 0.9rem;
-                margin-bottom: 1.5rem;
-            }
-
-            @media (max-width: 768px) {
-                .japanese-proverb {
-                    padding: 1rem;
-                }
-
-                .kanji-main {
-                    font-size: 1.75rem;
-                }
-
-                .kanji-breakdown {
-                    gap: 0.75rem;
-                }
-
-                .kanji-item {
-                    padding: 0.5rem;
-                    min-width: 50px;
-                }
-
-                .kanji {
-                    font-size: 1.25rem;
-                }
-            }
-
-            .proverb-section {
-                background-color: #f8f9fa;
-                padding: 4rem 0;
-                text-align: center;
-            }
-
-            .proverb-section .japanese-proverb {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .mt-5 {
-                margin-top: 3rem;
-            }
-
-            .mb-2 {
-                margin-bottom: 1rem;
-            }
-
-            .mb-3 {
-                margin-bottom: 1.5rem;
-            }
-
-            .mb-4 {
-                margin-bottom: 2rem;
-            }
-
-            .nav {
-                transition: transform 0.3s ease-in-out;
-            }
-
-            .contact-section {
-                text-align: center;
-                padding: 4rem 2rem;
-                display: flex;
-                flex-direction: column;
-                min-height: 300px;
-            }
-
-            .social-container {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 2rem 0;  /* Added to create equal spacing */
-            }
-
-            .social-links {
-                display: flex;
-                gap: 2rem;
-                list-style: none;
-                padding: 0;
-            }
-
-            .social-links a {
-                font-size: 1.5rem;
-                color: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .copyright {
-                padding-bottom: 1rem;
-            }
-
-            .contact-section h2 {
-                color: white;
-            }
-
-            .contact-section hr {
-                background-color: rgba(255, 255, 255, 0.8);
-            }
-
-            .hero-title {
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
-                letter-spacing: 0.05em;
-                font-size: 2.4rem;
-            }
-
-            .hero-subtitle {
-                font-family: 'Raleway', sans-serif;
-                font-weight: 300;
-                letter-spacing: 0.2em;
-                font-size: 1.1rem;
-            }
-
-            .hero-domain {
-                font-family: 'Barlow', sans-serif;
-                font-weight: 400;
-                letter-spacing: 0.1em;
-                font-size: 0.8rem;
-                opacity: 0.8;
-            }
-
-            @media (max-width: 768px) {
-                .hero-title {
-                    font-size: 1.8rem;
-                }
-                
-                .hero-subtitle {
-                    font-size: 0.9rem;
-                }
-
-                .hero-domain {
-                    font-size: 0.7rem;
-                }
-            }
-        </style>
-
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="./static/js/script.js"></script>
     </body>
 </html>
