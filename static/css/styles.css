@@ -1164,7 +1164,7 @@ img {
 }
 
 .social-links a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #fff;
     display: flex;
     align-items: center;
@@ -1240,4 +1240,43 @@ img {
 /* Add at the top level of your CSS */
 .no-scroll {
     overflow: hidden;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s ease forwards;
+}
+
+.hero-title.animate-slide-up {
+    animation-delay: 0.3s;
+}
+
+.hero-subtitle.animate-slide-up {
+    animation-delay: 0.6s;
+}
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s;
 }
