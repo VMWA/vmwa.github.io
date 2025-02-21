@@ -18,6 +18,7 @@ html {
     background: url('../images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
+    line-height: 1.4;  /* Base line height for the whole page */
 }
 
 body {
@@ -178,8 +179,14 @@ nav a:hover {
     font-size: 1.8em;
 }
 
-h1, h2 {
-    line-height: 1.2;
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;  /* Consistent line height for headings */
+    margin-bottom: 1rem;  /* Consistent bottom margin for headings */
+}
+
+p {
+    line-height: 1.6;  /* Slightly larger line height for better readability of body text */
+    margin-bottom: 1rem;  /* Consistent spacing after paragraphs */
 }
 
 section {
@@ -195,7 +202,7 @@ section {
     margin: 0 auto;
     padding: 6rem 4rem;
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.4;  /* Ensure sections maintain the base line height */
     overflow: hidden;
     min-height: 50vh;
 }
@@ -204,12 +211,15 @@ section p {
     font-size: 1.125rem;
     text-align: center;
     max-width: 775px;
+    line-height: 1.4;  /* Match the base line height */
 }
 
 section:not(#hero) h1, section:not(#hero) h2, footer h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.375em;
     font-weight: 400;
+    line-height: 1.2;  /* Match heading line height */
+    margin-bottom: 1rem;  /* Consistent margin */
 }
 
 section.quote {
@@ -289,6 +299,8 @@ section#hero small {
     font-weight: 700;
     letter-spacing: 0.05em;
     font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 .hero-subtitle {
@@ -296,6 +308,8 @@ section#hero small {
     font-weight: 300;
     letter-spacing: 0.2em;
     font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
 }
 
 .hero-domain {
@@ -304,6 +318,7 @@ section#hero small {
     letter-spacing: 0.1em;
     font-size: 0.8rem;
     opacity: 0.8;
+    line-height: 1.4;
 }
 
 #hero .hero-content {
@@ -329,6 +344,7 @@ section#hero small {
 section.about {
     background-color: #001c3be6;
     color: white;
+    line-height: 1.4;  /* Match base line height */
 }
 
 section.about .button:active {
@@ -1279,4 +1295,10 @@ img {
     opacity: 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: 1s;
+}
+
+/* Ensure consistent text styles in about section */
+section.about p {
+    line-height: 1.4;  /* Match base line height */
+    margin-bottom: 1rem;  /* Consistent margin */
 }
