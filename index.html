@@ -1,359 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link rel="icon" href="./static/images/favicon.png">
-        <title>Vilhelm Martinsson Web Applications | www.vilhelmmartinsson.com | Full-stack Web Development</title>
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link rel="stylesheet" href="./static/css/styles.css">
-        <link rel="preconnect" href="https://unpkg.com">
-        <link rel="preconnect" href="https://use.fontawesome.com">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600&family=Barlow:wght@400&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- Hamburger button for mobile -->
-        <button class="hamburger" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-        </button>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="icon" href="static/images/favicon.png">
+		<title>Vilhelm Martinsson Web Applications | www.vilhelmmartinsson.com | Full-stack Web Development</title>
 
-        <nav class="nav">
+		<link rel="preconnect" href="https://unpkg.com">
+		<link rel="preconnect" href="https://use.fontawesome.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;600&family=Barlow:wght@400&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="static/css/styles.css">
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	</head>
+	<body>
+		<button class="hamburger" aria-label="Menu">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<nav class="nav">
             <div class="nav-container">
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#technologies" class="nav-link">Tech</a></li>
-                    <li><a href="#customers" class="nav-link">Customers</a></li>
-                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+				<ul class="nav-menu">
+					<li><a href="#home" class="nav-link">Home</a></li>
+					<li><a href="#about" class="nav-link">About</a></li>
+					<li><a href="#services" class="nav-link">Services</a></li>
+					<li><a href="#technologies" class="nav-link">Tech</a></li>
+					<li><a href="#customers" class="nav-link">Customers</a></li>
+					<li><a href="#reviews" class="nav-link">Reviews</a></li>
+					<li><a href="#blog" class="nav-link">Blog</a></li>
+					<li><a href="#contact" class="nav-link">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
 
-        <main>
-            <section id="hero">
-                <span class="star"></span>
-                <div class="mb-4" data-aos="fade" data-aos-duration="1500">
-                    <img id="logo" alt="Logo" src="./static/images/vmwa-background.svg" />
-                    <h1 class="mb-3 hero-title animate-slide-up">Vilhelm Martinsson</h1>
-                    <h2 class="mb-4 hero-subtitle animate-slide-up">WEB APPLICATIONS</h2>
-                    <small class="hero-domain animate-fade-in">www.vilhelmmartinsson.com</small>             
-                </div> 
-            </section>
+		<main>
+			<section id="hero">
+				<span class="star"></span>
+				<div class="mb-4" data-aos="fade" data-aos-duration="1500">
+					<img id="logo" alt="Logo" src="static/images/vmwa-background.svg" />
+					<h1 class="mb-3 hero-title animate-slide-up">Vilhelm Martinsson</h1>
+					<h2 class="mb-4 hero-subtitle animate-slide-up">WEB APPLICATIONS</h2>
+					<small class="hero-domain animate-fade-in">www.vilhelmmartinsson.com</small>
+				</div>
+			</section>
 
-            <section id="home">
-                <h1 class="mb-5">Web applications for the modern age...</h1>
-                <hr class="mb-5">
-                
-                <div class="home-content">
-                    <div class="text-block mt-4">
-                        <p class="mb-3">
-                            <strong>For the past decades we have witnessed an amazing shift to digitalization. 
-                            The recent AI revolution has taken this transformation to unprecedented levels.</strong>
-                        </p>
+			<section id="home">
+				<h1 class="mb-5">Web applications for the modern age...</h1>
+				<hr class="mb-5">
 
-                        <p class="mb-3">
-                            The emergence of large language models and generative AI has fundamentally 
-                            transformed how businesses operate. To stay competitive in this AI-driven 
-                            landscape, businesses must not only adapt to these changes but actively 
-                            leverage AI technologies to enhance their operations.
-                        </p>
+				<div class="home-content">
+					<div class="text-block mt-4">
+						<p class="mb-3">
+							<strong>For the past decades we have witnessed an amazing shift to digitalization. 
+							The recent AI revolution has taken this transformation to unprecedented levels.</strong>
+						</p>
 
-                        <p class="mb-3">
-                            A modern web agency should help to not only survive, but thrive, 
-                            in this landscape.
-                        </p>
-                    </div>
-                    
-                    <div class="japanese-proverb">
-                        <p class="kanji-main mb-2">
-                            <strong>温故知新</strong>
-                        </p>
-                        <p class="romaji mb-3">
-                            (おんこちしん)
-                        </p>
-                        <p class="translation mb-2">
-                            "Learn from the past to create the new"
-                        </p>
-                        <p class="attribution mb-4">
-                            - Confucius, Chinese philosopher (551-479 BCE)
-                        </p>
-                        <div class="kanji-breakdown">
-                            <div class="kanji-item">
-                                <span class="kanji">温</span>
-                                <span class="reading">おん</span>
-                                <span class="meaning">review</span>
-                            </div>
-                            <div class="kanji-item">
-                                <span class="kanji">故</span>
-                                <span class="reading">こ</span>
-                                <span class="meaning">old</span>
-                            </div>
-                            <div class="kanji-item">
-                                <span class="kanji">知</span>
-                                <span class="reading">ち</span>
-                                <span class="meaning">know</span>
-                            </div>
-                            <div class="kanji-item">
-                                <span class="kanji">新</span>
-                                <span class="reading">しん</span>
-                                <span class="meaning">new</span>
-                            </div>
-                        </div>
-                    </div>
+						<p class="mb-3">
+							The emergence of large language models and generative AI has fundamentally 
+							transformed how businesses operate. To stay competitive in this AI-driven 
+							landscape, businesses must not only adapt to these changes but actively 
+							leverage AI technologies to enhance their operations.
+						</p>
 
-                    <!-- <div class="japanese-proverb">
-                        <p class="kanji-main mb-2">
-                            <strong>石の上にも三年</strong>
-                        </p>
-                        <p class="romaji mb-3">
-                            （いしのうえにもさんねん）
-                        </p>
-                        <p class="translation mb-2">
-                            "Sit on a rock for three years"
-                        </p>
-                        <p class="meaning mb-2">
-                            "Patience and perseverance lead to success"
-                        </p>
-                        <p class="attribution mb-4">
-                            - Japanese proverb
-                        </p>
-                        <div class="kanji-breakdown">
-                            <div class="kanji-item">
-                                <span class="kanji">石</span>
-                                <span class="reading">いし</span>
-                                <span class="meaning">stone</span>
-                            </div>
-                            <div class="kanji-item">
-                                <span class="kanji">上</span>
-                                <span class="reading">うえ</span>
-                                <span class="meaning">upon</span>
-                            </div>
-                            <div class="kanji-item">
-                                <span class="kanji">三</span>
-                                <span class="reading">さん</span>
-                                <span class="meaning">three</span>
-                            </div>
-                            <div class="kanji-item">
-                                <span class="kanji">年</span>
-                                <span class="reading">ねん</span>
-                                <span class="meaning">year</span>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-            </section>
+						<p class="mb-3">
+							A modern web agency should help to not only survive, but thrive, 
+							in this landscape.
+						</p>
+					</div>
 
-            <section class="about" id="about">
-                <h2 class="mb-5" data-aos="fade-left">About</h2>
-                <hr class="mb-5">
-                <p data-aos="fade-up">
-                    My name is Vilhelm Martinsson and I'm a freelancing full-stack web developer currently based in Sweden. I build responsive and user-friendly web applications for small and medium sized businesses. Through our network of partners, we can offer various digital services.
-                </p>
-                <br>
-                <p data-aos="fade-up">
-                    Please <a href="mailto:vilhelmmartinsson@gmail.com">contact</a> me if you want to know more!
-                </p>
-                <br>
-            </section>
+					<div class="japanese-proverb">
+						<p class="kanji-main mb-2">
+							<strong>温故知新</strong>
+						</p>
+						<p class="romaji mb-3">
+							(おんこちしん)
+						</p>
+						<p class="translation mb-2">
+							"Learn from the past to create the new"
+						</p>
+						<p class="attribution mb-4">
+							- Confucius, Chinese philosopher (551-479 BCE)
+						</p>
+						<div class="kanji-breakdown">
+							<div class="kanji-item">
+								<span class="kanji">温</span>
+								<span class="reading">おん</span>
+								<span class="meaning">review</span>
+							</div>
+							<div class="kanji-item">
+								<span class="kanji">故</span>
+								<span class="reading">こ</span>
+								<span class="meaning">old</span>
+							</div>
+							<div class="kanji-item">
+								<span class="kanji">知</span>
+								<span class="reading">ち</span>
+								<span class="meaning">know</span>
+							</div>
+							<div class="kanji-item">
+								<span class="kanji">新</span>
+								<span class="reading">しん</span>
+								<span class="meaning">new</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-            <section class="services" id="services">
-                <h2 class="mb-5" data-aos="fade-left">Services</h2>
-                <hr class="mb-5">
-                <div class="services-grid">
-                    <div class="service-card" data-aos="fade-up">
-                        <div class="service-content">
-                            <h3>Frontend Development</h3>
-                            <p>Intuitive experiences</p>
-                            <ul class="service-details">
-                                <li>Vue.js / Nuxt.js applications</li>
-                                <li>Responsive design</li>
-                                <li>Interactive UI/UX</li>
-                                <li>Progressive Web Apps</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-content">
-                            <h3>Backend Development</h3>
-                            <p>Scalable solutions</p>
-                            <ul class="service-details">
-                                <li>Python / Django applications</li>
-                                <li>RESTful APIs</li>
-                                <li>Database architecture</li>
-                                <li>Cloud deployment</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-content">
-                            <h3>AI Integration</h3>
-                            <p>Intelligent systems</p>
-                            <ul class="service-details">
-                                <li>OpenAI API integration</li>
-                                <li>Custom LLM implementations</li>
-                                <li>AI-powered features</li>
-                                <li>Intelligent automation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+			<section class="about" id="about">
+				<h2 class="mb-5" data-aos="fade-left">About</h2>
+				<hr class="mb-5">
+				<p data-aos="fade-up">
+					My name is Vilhelm Martinsson and I'm a freelancing full-stack web developer currently based in Sweden. I build responsive and user-friendly web applications for small and medium sized businesses. Through our network of partners, we can offer various digital services.
+				</p>
+				<br>
+				<p data-aos="fade-up">
+					Please <a href="mailto:vilhelmmartinsson@gmail.com">contact</a> me if you want to know more!
+				</p>
+				<br>
+			</section>
 
-            <section class="technologies" id="technologies">
-                <h2 class="mb-5" data-aos="fade-left">Technologies</h2>
-                <hr class="mb-5">
-                <div class="technologies-container" role="list">
-                    <div class="column" role="listitem">
-                        <div title="Python" data-aos="fade-left" data-aos-offset="10">
-                            <a href="https://www.python.org/"><i class="fab fa-python"></i></a>
-                        </div>
-                        <div title="Javascript" data-aos="fade-left" data-aos-offset="50">
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><i class="fab fa-js-square"></i></a>
-                        </div>
-                        <div title="Vue" data-aos="fade-left" data-aos-offset="100">
-                            <a href="https://www.vuejs.org/"><i class="fab fa-vuejs"></i></a>
-                        </div>
-                    </div>
-                    <div class="column" role="listitem">
-                        <div title="Node" data-aos="fade-left" data-aos-offset="150">
-                            <a href="https://nodejs.org/en/"><i class="fab fa-node-js"></i></a>
-                        </div>
-                        <div title="HTML5" data-aos="fade-left" data-aos-offset="200">
-                            <a href="https://www.w3.org/html/"><i class="fab fa-html5"></i></a>
-                        </div>
-                        <div title="CSS3" data-aos="fade-left" data-aos-offset="250">
-                            <a href="https://www.w3.org/Style/CSS/Overview.en.html"><i class="fab fa-css3-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <p class="mb-5" data-aos="fade-up">
-                    I work primarily with technologies such as Python, Django, Flask, Django-Rest, Django-Channels, Websockets, Javascript (ES6+, Node, Vue.js, Nuxt.js), Postegresql, HTML5, CSS3, SQL, JSON, Git/Github, Heroku, Digital Ocean (Droplets and App Platform), Stripe, Mailgun, Nginx, Gunicorn, Linux (Ubuntu), OpenAi etc.
-                </p>
-            </section>
+			<section class="services" id="services">
+				<h2 class="mb-5" data-aos="fade-left">Services</h2>
+				<hr class="mb-5">
+				<div class="services-grid">
+					<div class="service-card" data-aos="fade-up">
+						<div class="service-content">
+							<h3>Frontend Development</h3>
+							<p>Intuitive experiences</p>
+							<ul class="service-details">
+								<li>Vue.js / Nuxt.js applications</li>
+								<li>Responsive design</li>
+								<li>Interactive UI/UX</li>
+								<li>Progressive Web Apps</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card" data-aos="fade-up" data-aos-delay="100">
+						<div class="service-content">
+							<h3>Backend Development</h3>
+							<p>Scalable solutions</p>
+							<ul class="service-details">
+								<li>Python / Django applications</li>
+								<li>RESTful APIs</li>
+								<li>Database architecture</li>
+								<li>Cloud deployment</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card" data-aos="fade-up" data-aos-delay="200">
+						<div class="service-content">
+							<h3>AI Integration</h3>
+							<p>Intelligent systems</p>
+							<ul class="service-details">
+								<li>OpenAI API integration</li>
+								<li>Custom LLM implementations</li>
+								<li>AI-powered features</li>
+								<li>Intelligent automation</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
 
-            <section id="customers" class="customers">
-                <h2 class="mb-5" data-aos="fade-left">Customers</h2>
-                <hr class="mb-5">
-                <div class="grid-container">
-                    <div class="card" data-aos="fade-left" data-aos-offset="10">
-                        <div>
-                            <a title="Webbstream" target="_blank" href="https://webbstream.se">
-                                <img src="./static/images/webbstream.png">
-                            </a>
-                        </div>
-                    </div>
-    
-                    <div class="card" data-aos="fade-left" data-aos-offset="50">
-                        <div>
-                            <a title="SRS Regatta" target="_blank" href="https://www.srsregatta.se">
-                                <img src="./static/images/regatta.png">
-                            </a>
-                        </div>
-                    </div>
-               
-                    <div class="card" data-aos="fade-left" data-aos-offset="100">
-                        <div>
-                            <a title="Grannkampen" href="./static/videos/gkpsv6.mp4" target="_blank">
-                                <img src="./static/images/grannkampen.svg">
-                            </a>
-                        </div>
-                    </div>
-                
-                    <div class="card" data-aos="fade-left" data-aos-offset="150">
-                        <div>
-                            <a title="Hälsoförmedlingen" target="_blank" href="https://www.halsoformedlingen.se">
-                                <img src="./static/images/halsoformedlingen.jpg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card" data-aos="fade-left" data-aos-offset="150">
-                        <div>
-                            <a title="Franke" target="_blank" href="https://www.franke.se">
-                                <img src="./static/images/franke.svg">
-                            </a>
-                        </div>
-                    </div>
-                </div> 
-            </section>
+			<section class="blog" id="blog">
+				<h2 class="mb-5" data-aos="fade-left">Blog</h2>
+				<hr class="mb-5">
+				<div class="blog-description mb-5 text-center" data-aos="fade-up">
+					<p>A place to scribble down thoughts and ideas, or dive deeper into subjects that catch my curiosity.</p>
+				</div>
+				<div class="blog-grid">
+					<!-- Posts will be loaded here by JavaScript -->
+				</div>
+				<p class="blog-status">Loading posts from Substack...</p>
+				<p class="mt-4"><a href="https://vilhelmmartinsson.substack.com" target="_blank" rel="noopener noreferrer"><strong>View all posts on Substack →</strong></a></p>
+			</section>
 
-            <section class="quote">
-                <div data-aos="fade" data-aos-duration="1500">
-                    <div class="quote-container">
-                        <img class="quote-marks" width="50" src="./static/images/quotes.svg" alt="Quote marks">
-                        Technology, like art,<br>is a soaring exercise<br>of the human imagination.
-                    </div>
-                    <small>- Daniel Bell, American sociologist</small>
-                </div>
-            </section>
+			<section class="technologies" id="technologies">
+				<h2 class="mb-5" data-aos="fade-left">Technologies</h2>
+				<hr class="mb-5">
+				<div class="technologies-container" role="list">
+					<div class="column" role="listitem">
+						<div title="Python" data-aos="fade-left" data-aos-offset="10">
+							<a href="https://www.python.org/"><i class="fab fa-python"></i></a>
+						</div>
+						<div title="Javascript" data-aos="fade-left" data-aos-offset="50">
+							<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><i class="fab fa-js-square"></i></a>
+						</div>
+						<div title="Vue" data-aos="fade-left" data-aos-offset="100">
+							<a href="https://www.vuejs.org/"><i class="fab fa-vuejs"></i></a>
+						</div>
+					</div>
+					<div class="column" role="listitem">
+						<div title="Node" data-aos="fade-left" data-aos-offset="150">
+							<a href="https://nodejs.org/en/"><i class="fab fa-node-js"></i></a>
+						</div>
+						<div title="HTML5" data-aos="fade-left" data-aos-offset="200">
+							<a href="https://www.w3.org/html/"><i class="fab fa-html5"></i></a>
+						</div>
+						<div title="CSS3" data-aos="fade-left" data-aos-offset="250">
+							<a href="https://www.w3.org/Style/CSS/Overview.en.html"><i class="fab fa-css3-alt"></i></a>
+						</div>
+					</div>
+				</div>
+				<p class="mb-5" data-aos="fade-up">
+					I work primarily with technologies such as Python, Django, Flask, Django-Rest, Django-Channels, Websockets, Javascript (ES6+, Node, Vue.js, Nuxt.js), Postegresql, HTML5, CSS3, SQL, JSON, Git/Github, Heroku, Digital Ocean (Droplets and App Platform), Stripe, Mailgun, Nginx, Gunicorn, Linux (Ubuntu), OpenAi etc.
+				</p>
+			</section>
 
-            <section class="reviews" id="reviews">
-                <h2 class="mb-5" data-aos="fade-left">Reviews</h2>
-                <hr class="mb-5">
-                <div>
-                    <div class="mb-3 card" data-aos="fade-up">
-                        <p class="mb-3">
-                            <span>
-                                "Vilhelm has been helping us develop a custom content management system using Django, Django REST, Celery, and third-party APIs. It allows us to manage multiple sites, schedule articles, and generate images with ease. The ongoing, iterative approach has been smooth, and we're very pleased with the result."
-                            </span>
-                        </p>
-                        <small><strong>- Anders Gärme, Webbstream</strong></small>
-                    </div>
-                    <div class="mb-3 card" data-aos="fade-up">
-                        <p class="mb-3">
-                            <span>
-                                "Vilhelm developed our MVP for a live, local quiz competition, covering both front and back end, and enabling players to compete for cash prizes with Swish payments. The development process has been efficient, and the final product meets our needs perfectly."
-                            </span>
-                        </p>
-                        <small><strong>- Andreas Asplund, Grannkampen</strong></small>
-                    </div>
-                    <div class="card" data-aos="fade-up">
-                        <p class="mb-3">
-                            <span>
-                                "Vilhelm has helped us with everything from requirements, design, development and implementation of our web application. The collaboration has been very good from start to finish and the project was delivered according to plan!"
-                            </span>
-                        </p>
-                        <small><strong>- Linus Lindeborg, Hälsoförmedlingen</strong></small>
-                    </div>
-                </div>
-            </section>
-        </main>
+			<section id="customers" class="customers">
+				<h2 class="mb-5" data-aos="fade-left">Customers</h2>
+				<hr class="mb-5">
+				<div class="grid-container">
+					<div class="card" data-aos="fade-left" data-aos-offset="10">
+						<div>
+							<a title="Webbstream" target="_blank" href="https://webbstream.se">
+								<img src="static/images/webbstream.png">
+							</a>
+						</div>
+					</div>
 
-        <footer>
-            <div id="contact" class="contact-section">
-                <h2 class="mb-5" data-aos="fade-left">Contact</h2>
-                <hr class="mb-5">
-                <p>Have a project in mind? Let's discuss how we can help your business grow.</p>
-                <div class="social-container">
-                    <ul class="social-links">
-                        <li>
-                            <a title="Email" href="mailto:vilhelmmartinsson@gmail.com">
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="Github" href="https://github.com/VMWA">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="LinkedIn" href="https://www.linkedin.com/in/vilhelm-martinsson/">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="copyright">
-                    <small>Copyright 2025 &#169; Vilhelm Martinsson Web Applications</small>
-                </div>
-            </div>
-        </footer>
+					<div class="card" data-aos="fade-left" data-aos-offset="50">
+						<div>
+							<a title="SRS Regatta" target="_blank" href="https://www.srsregatta.se">
+								<img src="static/images/regatta.png">
+							</a>
+						</div>
+					</div>
+				   
+					<div class="card" data-aos="fade-left" data-aos-offset="100">
+						<div>
+							<a title="Grannkampen" href="static/videos/gkpsv6.mp4" target="_blank">
+								<img src="static/images/grannkampen.svg">
+							</a>
+						</div>
+					</div>
+				
+					<div class="card" data-aos="fade-left" data-aos-offset="150">
+						<div>
+							<a title="Hälsoförmedlingen" target="_blank" href="https://www.halsoformedlingen.se">
+								<img src="static/images/halsoformedlingen.jpg">
+							</a>
+						</div>
+					</div>
+					<div class="card" data-aos="fade-left" data-aos-offset="150">
+						<div>
+							<a title="Franke" target="_blank" href="https://www.franke.se">
+								<img src="static/images/franke.svg">
+							</a>
+						</div>
+					</div>
+				</div> 
+			</section>
 
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="./static/js/script.js"></script>
-    </body>
+			<section class="quote">
+				<div data-aos="fade" data-aos-duration="1500">
+					<div class="quote-container">
+						<img class="quote-marks" width="50" src="static/images/quotes.svg" alt="Quote marks">
+						Technology, like art,<br>is a soaring exercise<br>of the human imagination.
+					</div>
+					<small>- Daniel Bell, American sociologist</small>
+				</div>
+			</section>
+
+			<section class="reviews" id="reviews">
+				<h2 class="mb-5" data-aos="fade-left">Reviews</h2>
+				<hr class="mb-5">
+				<div>
+					<div class="mb-3 card" data-aos="fade-up">
+						<p class="mb-3">
+							<span>
+								"Vilhelm has been helping us develop a custom content management system using Django, Django REST, Celery, and third-party APIs. It allows us to manage multiple sites, schedule articles, and generate images with ease. The ongoing, iterative approach has been smooth, and we're very pleased with the result."
+							</span>
+						</p>
+						<small><strong>- Anders Gärme, Webbstream</strong></small>
+					</div>
+					<div class="mb-3 card" data-aos="fade-up">
+						<p class="mb-3">
+							<span>
+								"Vilhelm developed our MVP for a live, local quiz competition, covering both front and back end, and enabling players to compete for cash prizes with Swish payments. The development process has been efficient, and the final product meets our needs perfectly."
+							</span>
+						</p>
+						<small><strong>- Andreas Asplund, Grannkampen</strong></small>
+					</div>
+					<div class="card" data-aos="fade-up">
+						<p class="mb-3">
+							<span>
+								"Vilhelm has helped us with everything from requirements, design, development and implementation of our web application. The collaboration has been very good from start to finish and the project was delivered according to plan!"
+							</span>
+						</p>
+						<small><strong>- Linus Lindeborg, Hälsoförmedlingen</strong></small>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div id="contact" class="contact-section">
+				<h2 class="mb-5" data-aos="fade-left">Contact</h2>
+				<hr class="mb-5">
+				<p>Have a project in mind? Let's discuss how we can help your business grow.</p>
+				<div class="social-container">
+					<ul class="social-links">
+						<li>
+							<a title="Email" href="mailto:vilhelmmartinsson@gmail.com">
+								<i class="fa fa-envelope"></i>
+							</a>
+						</li>
+						<li>
+							<a title="Github" href="https://github.com/VMWA">
+								<i class="fab fa-github"></i>
+							</a>
+						</li>
+						<li>
+							<a title="LinkedIn" href="https://www.linkedin.com/in/vilhelm-martinsson/">
+								<i class="fab fa-linkedin"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="copyright">
+					<small>Copyright 2025 &#169; Vilhelm Martinsson Web Applications</small>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script src="static/js/script.js"></script>
+	</body>
 </html>

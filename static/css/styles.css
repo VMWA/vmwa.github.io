@@ -258,7 +258,7 @@ section.quote {
 hr {
     width: 80px;
     height: 2px;
-    background-color: rgba(12, 95, 135, 0.4);
+    background-color: rgba(12, 95, 135, 0.6); /* Changed from 0.4 to 0.6 */
     border: 0;
 }
 
@@ -330,11 +330,11 @@ section#hero small {
 }
 
 #logo {
-    width: 15%; /* Increased from 12% */
+    width: 160px; /* Increased from 12% */
     min-width: 100px; /* Increased minimum size */
     max-width: 250px; /* Significantly increased maximum size */
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .bi {
@@ -352,7 +352,7 @@ section.about .button:active {
 }
 
 section.about hr {
-    background-color: rgba(188, 225, 255, 0.4);
+    background-color: rgba(188, 225, 255, 0.6); /* Changed from 0.4 to 0.6 */
 }
 
 section.about a {
@@ -374,7 +374,7 @@ section.technologies {
 }
 
 section.technologies hr {
-    background-color: rgba(111, 255, 239, 0.4);
+    background-color: rgba(111, 255, 239, 0.6); /* Changed from 0.4 to 0.6 */
 }
 
 section.technologies .technologies-container {
@@ -417,13 +417,14 @@ section#reviews {
     background-color: white;
     transform: translateY(0) !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: all 1s cubic-bezier(0.2, 0, 0.2, 1);
+    border: 1px solid transparent;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 1.5s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 122, 204, 0.08);
 }
 
 .card p {
@@ -438,6 +439,17 @@ section#customers .card img {
 
 section#blog {
     background-color: #f9f9f9;
+}
+
+/* Style for the "View all posts on Substack" link - be more specific */
+section#blog > p > a {
+    color: #0c5f87; /* Dark blue that matches your theme */
+    text-decoration: none;
+}
+
+section#blog > p > a:hover {
+    color: #0A4D6D; /* Slightly darker on hover */
+    text-decoration: underline;
 }
 
 /* Style for the list container */
@@ -575,7 +587,7 @@ footer a:hover i {
 }
 
 footer hr {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.6); /* Changed from 0.4 to 0.6 */
     border: 0;
     height: 1px;
     width: 80px;
@@ -1196,12 +1208,16 @@ img {
 }
 
 .contact-section hr {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6); /* 60% opacity - more visible than 0.4, less than 0.8 */
 }
 
 /* Margin utilities */
 .mt-5 {
     margin-top: 3rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
 }
 
 .mb-2 {
@@ -1301,4 +1317,176 @@ img {
 section.about p {
     line-height: 1.4;  /* Match base line height */
     margin-bottom: 1rem;  /* Consistent margin */
+}
+
+/* Blog cards */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.blog-card .thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #eee;
+    overflow: hidden;
+}
+
+.blog-card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-card .content {
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+.blog-card .title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.blog-card .meta {
+    color: #666;
+}
+
+.blog-card p {
+    color: #333;
+}
+
+/* Blog post cards - using same style as reviews */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.blog-post-card {
+    text-align: left !important;
+    margin-bottom: 0;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+
+.blog-post-card .post-header {
+    margin-bottom: 0.75rem;
+}
+
+.blog-post-card .post-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.blog-post-card .post-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-post-card .post-title a:hover {
+    color: #007acc;
+}
+
+.blog-post-card .post-meta {
+    color: #666;
+}
+
+.blog-post-card .post-date {
+    font-weight: 500;
+}
+
+.blog-post-card .post-source {
+    color: #999;
+}
+
+.blog-post-card .post-excerpt {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    text-align: left !important;
+}
+
+/* Override section p centering for blog posts only, not description */
+.blog-post-card p,
+.blog-grid p {
+    text-align: left !important;
+}
+
+/* Blog card link styling */
+.blog-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.blog-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-card-link:hover .blog-post-card {
+    transform: translateY(-2px);
+}
+
+/* Inline image layout */
+.post-content-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.post-image-inline {
+    flex-shrink: 0;
+}
+
+.post-text {
+    flex: 1;
+    min-width: 0; /* Allows text to shrink */
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .blog-post-card .post-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+section#blog hr {
+    background-color: #0c5f87; /* Same as the link color */
 }
