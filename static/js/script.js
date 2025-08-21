@@ -153,3 +153,80 @@
         }
     }
 })();
+
+// Cookie consent and analytics functions
+function checkCookieConsent() {
+    const consent = localStorage.getItem('cookieConsent');
+    if (consent === 'accepted') {
+        loadGoogleAnalytics();
+    } else if (consent === 'declined') {
+        // Do nothing - respect their choice
+    } else {
+        // Show banner if no choice made yet
+        // document.getElementById('cookie-banner').style.display = 'block';
+    }
+}
+
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+    loadGoogleAnalytics();
+}
+
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+
+function loadGoogleAnalytics() {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SRVVEXPHSC';
+    document.head.appendChild(script);
+    
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRVVEXPHSC');
+}
+
+// Modal functions
+function openAnalyticsModal() {
+    document.getElementById('analytics-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeAnalyticsModal() {
+    document.getElementById('analytics-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function acceptCookiesFromModal() {
+    acceptCookies();
+    closeAnalyticsModal();
+}
+
+function declineCookiesFromModal() {
+    declineCookies();
+    closeAnalyticsModal();
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add cookie consent check
+    window.addEventListener('load', checkCookieConsent);
+    
+    // Modal event listeners
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('analytics-modal');
+        if (event.target === modal) {
+            closeAnalyticsModal();
+        }
+    });
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeAnalyticsModal();
+        }
+    });
+});
