@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<!-- Umami Analytics -->
+		<script defer src="https://cloud.umami.is/script.js" data-website-id="ca4bebb7-2aed-42e1-a6d0-c9fcf1fe562c"></script>
+		
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="icon" href="static/images/favicon.png">
@@ -15,6 +18,7 @@
 		<link rel="stylesheet" href="static/css/styles.css">
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	</head>
 	<body>
 		<button class="hamburger" aria-label="Menu">
@@ -311,67 +315,9 @@
 			</div>
 		</footer>
 
-		<div id="cookie-banner" class="cookie-banner" style="display: none;">
-			<div class="cookie-content">
-				<p>This website uses Google Analytics to analyze traffic and improve your experience. 
-				<a href="#" onclick="openAnalyticsModal()" class="learn-more-link">Learn more</a></p>
-				<div class="cookie-buttons">
-					<button onclick="acceptCookies()" class="btn-accept">Accept</button>
-					<button onclick="declineCookies()" class="btn-decline">Decline</button>
-				</div>
-			</div>
-		</div>
 
-		<!-- Google Analytics Info Modal -->
-		<div id="analytics-modal" class="modal" style="display: none;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h2><i class="fab fa-google"></i> Google Analytics Information</h2>
-					<span class="close" onclick="closeAnalyticsModal()">&times;</span>
-				</div>
-				<div class="modal-body">
-					<div class="info-section">
-						<h3><i class="fas fa-info-circle"></i> What is Google Analytics?</h3>
-						<p>Google Analytics is a web analytics service that helps us understand how visitors interact with our website. It provides valuable insights about website usage patterns while maintaining your privacy.</p>
-					</div>
-					
-					<div class="info-section">
-						<h3><i class="fas fa-chart-bar"></i> What data is collected?</h3>
-						<ul class="info-list">
-							<li><i class="fas fa-chevron-right"></i> Pages you visit and time spent on each page</li>
-							<li><i class="fas fa-chevron-right"></i> General location (country/city level only)</li>
-							<li><i class="fas fa-chevron-right"></i> Device type, browser, and screen size</li>
-							<li><i class="fas fa-chevron-right"></i> How you found our website (search, direct, referral)</li>
-						</ul>
-					</div>
-					
-					<div class="info-section">
-						<h3><i class="fas fa-shield-alt"></i> Your Privacy</h3>
-						<ul class="info-list">
-							<li><i class="fas fa-chevron-right"></i> <strong>Anonymous:</strong> No personal information is collected</li>
-							<li><i class="fas fa-chevron-right"></i> <strong>No tracking across sites:</strong> Only tracks activity on this website</li>
-							<li><i class="fas fa-chevron-right"></i> <strong>Your choice:</strong> You can decline analytics and still use the site</li>
-							<li><i class="fas fa-chevron-right"></i> <strong>Cookie control:</strong> Disable in browser settings anytime</li>
-						</ul>
-					</div>
-					
-					<div class="info-section">
-						<h3><i class="fas fa-bullseye"></i> Why we use it</h3>
-						<p>The data helps us improve the website by understanding which content is most valuable to visitors and identifying areas that need enhancement. This leads to a better experience for everyone.</p>
-					</div>
-					
-					<div class="info-section highlight">
-						<h3><i class="fas fa-heart"></i> Our Commitment</h3>
-						<p>We respect your privacy. The data is used solely for website improvement and is never sold or shared with third parties for marketing purposes.</p>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button onclick="acceptCookiesFromModal()" class="btn-accept-modal">Accept Analytics</button>
-					<button onclick="declineCookiesFromModal()" class="btn-decline-modal">Decline Analytics</button>
-					<button onclick="closeAnalyticsModal()" class="btn-close-modal">Close</button>
-				</div>
-			</div>
-		</div>
+
+
 
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script src="static/js/script.js"></script>
