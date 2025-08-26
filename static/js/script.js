@@ -30,26 +30,28 @@
             });
         }
         
-        // Load Substack posts
-        loadSubstackPosts();
+        // Load Substack posts for one blog
+        loadSubstackPosts('https://vilhelmmartinsson.substack.com/feed', '#vilhelmmartinsson-column');
     });
 
     // Function to load Substack RSS feed
-    async function loadSubstackPosts() {
-        const blogGrid = document.querySelector('.blog-grid');
-        const blogStatus = document.querySelector('.blog-status');
+    async function loadSubstackPosts(feedUrl, columnSelector) {
+        const blogGrid = document.querySelector(columnSelector);
+        const blogStatus = blogGrid.querySelector('.blog-status');
         
         if (!blogGrid) return;
         
         try {
-            // Direct RSS fetch like your working example
-            const feedUrl = "https://vilhelmmartinsson.substack.com/feed";
             const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`;
             
             const response = await fetch(proxyUrl);
             const data = await response.json();
             const parser = new DOMParser();
             const xml = parser.parseFromString(data.contents, "application/xml");
+            
+            // Extract the blog name from the feed
+            // const blogName = xml.querySelector("channel > title")?.textContent || 'Unknown Publication';
+            // console.log(`Loading posts for: ${blogName}`);
             
             const items = xml.querySelectorAll("item");
             
@@ -62,25 +64,15 @@
                 const pubDate = item.querySelector("pubDate")?.textContent || '';
                 const description = item.querySelector("description")?.textContent || '';
                 
-                // Get image from enclosure tag (Substack RSS format)
                 const enclosure = item.querySelector("enclosure");
                 let imgSrc = null;
                 if (enclosure) {
                     const enclosureUrl = enclosure.getAttribute("url");
                     const enclosureType = enclosure.getAttribute("type");
                     
-                    // Check if it's an image
                     if (enclosureType && enclosureType.startsWith("image")) {
                         imgSrc = enclosureUrl;
                     }
-                }
-                
-                console.log(`Post: ${title}`);
-                console.log(`Enclosure found: ${!!enclosure}`);
-                console.log(`Image found: ${imgSrc || 'none'}`);
-                if (enclosure) {
-                    console.log(`Enclosure URL: ${enclosure.getAttribute("url")}`);
-                    console.log(`Enclosure type: ${enclosure.getAttribute("type")}`);
                 }
                 
                 posts.push({
@@ -93,7 +85,7 @@
             });
             
             if (posts.length > 0) {
-                displaySubstackPosts(posts);
+                displaySubstackPosts(posts, blogGrid);
                 if (blogStatus) blogStatus.style.display = 'none';
             } else {
                 throw new Error('No posts found');
@@ -101,16 +93,15 @@
         } catch (error) {
             console.error('Error loading Substack posts:', error);
             if (blogStatus) {
-                blogStatus.innerHTML = 'Unable to load posts. <a href="https://vilhelmmartinsson.substack.com" target="_blank">Visit Substack →</a>';
+                blogStatus.innerHTML = `Unable to load posts. <a href="${feedUrl.replace('/feed', '')}" target="_blank">Visit Substack →</a>`;
             }
         }
     }
 
     // Function to display Substack posts
-    function displaySubstackPosts(posts) {
-        const blogGrid = document.querySelector('.blog-grid');
+    function displaySubstackPosts(posts, blogGrid) {
         if (!blogGrid) return;
-        
+
         blogGrid.innerHTML = posts.map(post => {
             const date = new Date(post.pubDate || post.published || Date.now());
             const formattedDate = date.toLocaleDateString('en-US', { 
@@ -119,7 +110,6 @@
                 day: 'numeric' 
             });
             
-            // Clean description for excerpt
             const description = post.description || post.content || '';
             const cleanDescription = description.replace(/<[^>]*>/g, '').substring(0, 200);
             
@@ -147,10 +137,8 @@
             `;
         }).join('');
         
-        // Re-initialize AOS for new elements
         if (typeof AOS !== 'undefined') {
             AOS.refresh();
         }
     }
-})();
-
+})(); // Close the immediately invoked function expression

@@ -1491,5 +1491,17 @@ section#blog hr {
     background-color: #0c5f87; /* Same as the link color */
 }
 
+.blog-grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
 
-
+.publication-column {
+    flex: 1; /* Ensures equal width for each column */
+    padding: 10px;
+    margin: 0 10px; /* Adds space between columns */
+    /* Remove background color and box shadow */
+    /* background-color: #fff; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
