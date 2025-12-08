@@ -344,7 +344,7 @@ section#hero small {
 
 .hero-subtitle {
     font-family: 'Raleway', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.04em;
     font-size: 1.1rem;
     line-height: 1.5;
@@ -437,10 +437,16 @@ section#hero small {
     background: rgba(255, 255, 255, 0.05);
 }
 
+.hero-cta .button:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
 #logo {
-    width: 160px;
-    min-width: 100px;
-    max-width: 250px;
+    width: 130px;
+    min-width: 80px;
+    max-width: 200px;
     height: auto;
     margin: 0 auto 2rem auto;
     display: block;
