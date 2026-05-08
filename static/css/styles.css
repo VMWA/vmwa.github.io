@@ -206,6 +206,11 @@ section.quote {
     position: relative;
 }
 
+/* Closing quote after testimonials — not shown */
+main > section.quote:last-of-type {
+    display: none !important;
+}
+
 .section-image-break {
     width: 100%;
 }
