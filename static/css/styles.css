@@ -199,6 +199,39 @@ section:not(#hero) h1, section:not(#hero) h2, footer h2 {
     margin-bottom: 1.5rem;
 }
 
+/* Section titles: centred gradient underline (all major sections) */
+main > section:not(#hero) > h2.mb-5,
+footer section.contact-section > h2.mb-5 {
+    margin-bottom: 3.25rem !important;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+main > section:not(#hero) > h2.mb-5::after,
+footer section.contact-section > h2.mb-5::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: min(120px, 28vw);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.18), transparent);
+}
+
+/* Beat base rule (main > section:not(#hero)… has :not(#id) specificity) */
+main > section.services > h2.mb-5::after {
+    background: linear-gradient(90deg, transparent, rgba(6, 39, 35, 0.28), transparent);
+}
+
+main > section#technologies > h2.mb-5::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+}
+
+footer section.contact-section > h2.mb-5::after {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+}
+
 section.quote {
     background-color: rgba(0, 28, 59, 0.94) !important;
     color: white;
@@ -491,43 +524,9 @@ section.services > * {
     z-index: 1;
 }
 
-section.services > h2 {
-    margin-bottom: 3.25rem !important;
-    padding-bottom: 1rem;
-    position: relative;
-}
-
-section.services > h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: min(120px, 28vw);
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(6, 39, 35, 0.25), transparent);
-}
-
 section.collaboration {
     background: #fafaf9;
     align-items: stretch;
-}
-
-section.collaboration > h2 {
-    margin-bottom: 2.75rem !important;
-    padding-bottom: 1rem;
-    position: relative;
-}
-
-section.collaboration > h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: min(120px, 28vw);
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.18), transparent);
 }
 
 section.collaboration .collaboration-inner {
