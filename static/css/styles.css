@@ -621,12 +621,13 @@ section.collaboration .collaboration-note {
     text-wrap: wrap;
 }
 
-section#selected-projects {
+section#selected-work {
     background-color: #fafafa;
     min-height: auto;
 }
 
-section#selected-projects > .projects-lede {
+section#selected-work > .projects-lede,
+section#side-projects > .projects-lede {
     text-align: center;
     max-width: 36rem;
     margin: -1.5rem auto 2.75rem;
@@ -636,10 +637,39 @@ section#selected-projects > .projects-lede {
 }
 
 @media (max-width: 768px) {
-    section#selected-projects > .projects-lede {
+    section#selected-work > .projects-lede,
+    section#side-projects > .projects-lede {
         margin-top: -1rem;
         margin-bottom: 2.25rem;
     }
+}
+
+section#side-projects {
+    background-color: #ffffff;
+    min-height: auto;
+}
+
+section#side-projects .project-card {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.project-card-logo.project-card-logo--icon {
+    color: #1a1a1a;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+section#side-projects .projects-lede a,
+section#side-projects .project-card-summary a {
+    color: #0c5f87;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+section#side-projects .projects-lede a:hover,
+section#side-projects .project-card-summary a:hover {
+    color: #0a4d6d;
+    text-decoration: underline;
 }
 
 .project-grid {
@@ -1129,7 +1159,7 @@ article.service > p {
         font-size: 1.5rem;
     }
 
-    .selected-projects .grid-container {
+    .projects-section .grid-container {
         gap: 1rem;
         padding: 0.5rem;
     }
