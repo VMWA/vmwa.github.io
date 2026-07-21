@@ -6,21 +6,53 @@
     -webkit-box-sizing: border-box;
 }
 
+/*
+  Spacing scale (8px base)
+  — related items   : --space-sm / --space-md
+  — within a group  : --space-lg / --space-xl
+  — section chrome  : --section-y / --section-x
+  Content sections size to their content (no min-height).
+  Hero is the exception: viewport-tall, content centred.
+*/
+:root {
+    --space-xs: 0.5rem;    /*  8px */
+    --space-sm: 0.75rem;   /* 12px */
+    --space-md: 1rem;      /* 16px */
+    --space-lg: 1.5rem;    /* 24px */
+    --space-xl: 2rem;      /* 32px */
+    --space-2xl: 3rem;     /* 48px */
+    --space-3xl: 4rem;     /* 64px */
+    --space-4xl: 6rem;     /* 96px */
+
+    --section-y: var(--space-4xl);
+    --section-x: var(--space-3xl);
+    --section-title-gap: 3.25rem;
+    --stack-gap: var(--space-xl);
+    --card-pad: 1.85rem 2rem;
+}
+
 html {
     font-family: 'Barlow', sans-serif;
     background: url('../images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     line-height: 1.4;
+    overflow-x: hidden;
 }
 
 body {
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 main {
     height: auto;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .grid-container {
@@ -134,19 +166,18 @@ section {
     flex-direction: column;
     width: 100%;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: white;
     margin: 0 auto;
-    padding: 6rem 4rem;
+    padding: var(--section-y) var(--section-x);
     text-align: center;
-    line-height: 1.4;  /* Ensure sections maintain the base line height */
-    overflow: visible;
-    min-height: 50vh;
+    line-height: 1.4;
+    overflow-x: hidden;
+    min-height: 0;
     border: none;
     box-shadow: none;
+    box-sizing: border-box;
 }
 
 /* :where() keeps this at 0 specificity so section-scoped max-widths (e.g. .collaboration-inner) win */
@@ -199,8 +230,8 @@ section:not(#hero) h1, section:not(#hero) h2, footer h2 {
 /* Section titles: centred gradient underline (all major sections) */
 main > section:not(#hero) > h2.mb-5,
 footer section.contact-section > h2.mb-5 {
-    margin-bottom: 3.25rem !important;
-    padding-bottom: 1rem;
+    margin-bottom: var(--section-title-gap) !important;
+    padding-bottom: var(--space-md);
     position: relative;
 }
 
@@ -508,8 +539,8 @@ section.technologies .tech-group-list {
 section.services {
     background: #ffffff;
     position: relative;
-    padding-top: 7rem;
-    padding-bottom: 6.5rem;
+    padding-top: calc(var(--section-y) + var(--space-md));
+    padding-bottom: var(--section-y);
 }
 
 section.services::before {
@@ -550,8 +581,8 @@ section.collaboration .collaboration-lede {
 section.collaboration .collaboration-modes {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2.25rem;
+    gap: var(--stack-gap);
+    margin-top: var(--space-xl);
     margin-bottom: 0;
     align-items: stretch;
 }
@@ -566,7 +597,7 @@ section.collaboration .collaboration-mode {
     background: #ffffff;
     border: none;
     border-radius: 10px;
-    padding: 1.85rem 2rem;
+    padding: var(--card-pad);
     box-shadow: none;
     transition: background 0.2s ease;
 }
@@ -608,8 +639,8 @@ section.collaboration .collaboration-note {
     line-height: 1.7;
     color: #666;
     margin-bottom: 0;
-    margin-top: 2.25rem;
-    padding-top: 1.75rem;
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     text-align: left;
     width: 100%;
@@ -628,7 +659,7 @@ section#selected-work > .projects-lede,
 section#side-projects > .projects-lede {
     text-align: center;
     max-width: 36rem;
-    margin: -1.5rem auto 2.75rem;
+    margin: calc(var(--space-md) * -1) auto var(--space-xl);
     font-size: 1rem;
     line-height: 1.65;
     color: #555;
@@ -637,8 +668,8 @@ section#side-projects > .projects-lede {
 @media (max-width: 768px) {
     section#selected-work > .projects-lede,
     section#side-projects > .projects-lede {
-        margin-top: -1rem;
-        margin-bottom: 2.25rem;
+        margin-top: 0;
+        margin-bottom: var(--space-xl);
     }
 }
 
@@ -673,7 +704,7 @@ section#side-projects .project-card-summary a:hover {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    gap: var(--stack-gap);
     max-width: 920px;
     margin: 0 auto;
     list-style: none;
@@ -687,7 +718,7 @@ section#side-projects .project-card-summary a:hover {
     align-items: stretch;
     background: #ffffff;
     border-radius: 10px;
-    padding: 1.75rem 1.5rem 1.65rem;
+    padding: var(--card-pad);
     text-align: left;
     border: none;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -771,10 +802,6 @@ section#side-projects .project-card-summary a:hover {
     .project-grid {
         grid-template-columns: 1fr;
     }
-
-    .project-card {
-        padding: 1.5rem 1.35rem;
-    }
 }
 
 section.reviews {
@@ -850,8 +877,8 @@ section.reviews .card p.mb-3 {
 
 @media (max-width: 768px) {
     section.reviews .card:not(:first-child) {
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
+        margin-top: var(--space-xl);
+        padding-top: var(--space-xl);
     }
 }
 
@@ -880,7 +907,7 @@ footer {
     background-color: #00020a;
     color: #ffffffcc;
     font-size: 1em;
-    padding: 5rem 2rem;
+    padding: var(--section-y) var(--section-x);
     text-align: center;    
     line-height: 1.6;
     border: none;
@@ -985,8 +1012,8 @@ span:nth-child(1) {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 3.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: var(--space-2xl);
     width: 100%;
     max-width: 920px;
     margin: 0 auto;
@@ -1054,16 +1081,28 @@ article.service > p {
 }
 
 @media (max-width: 1024px) {
-    section {
-        padding: 4rem 2rem;
-    }
-
-    footer {
-        padding: 4rem 2rem;
+    :root {
+        --section-y: var(--space-3xl); /* 64px */
+        --section-x: var(--space-xl);  /* 32px */
     }
 }
 
 @media (max-width: 768px) {
+    :root {
+        /*
+          Mobile content pages (prose, not dense apps):
+          — 64px section Y: air between blocks without empty voids
+          — 24px gutter: comfortable reading margin
+          — 32px title gap: clear hierarchy, not a vacant band
+          — 24px stack/card: related items stay grouped
+        */
+        --section-y: var(--space-3xl);      /* 64px */
+        --section-x: var(--space-lg);       /* 24px */
+        --section-title-gap: var(--space-xl); /* 32px */
+        --stack-gap: var(--space-lg);       /* 24px */
+        --card-pad: var(--space-lg);
+    }
+
     html {
         background-attachment: scroll;
         background-position: center;
@@ -1072,12 +1111,11 @@ article.service > p {
     
     body {
         min-height: 100vh;
+        overflow-x: hidden;
     }
 
     main {
-        /* scroll-snap-type: y mandatory; */
-        /* height: 100vh;  */
-        overflow-y: scroll; 
+        overflow-x: hidden;
     }
 
     #logo {
@@ -1102,32 +1140,43 @@ article.service > p {
     }
 
     section {
-        padding: 3rem 1.5rem;
+        padding: var(--section-y) var(--section-x);
         line-height: 1.4;
-        min-height: 100vh;
-        /* scroll-snap-align: start; */
+        min-height: 0;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+        justify-content: flex-start;
     }
 
     section.services {
-        padding-top: 5.5rem;
-        padding-bottom: 5.25rem;
+        padding-top: var(--section-y);
+        padding-bottom: var(--section-y);
     }
 
     footer {
-        padding: 3rem 1.5rem;
+        padding: var(--section-y) var(--section-x);
+        overflow-x: hidden;
+        max-width: 100%;
     }
 
+    /* Hero: only section that earns full-viewport height */
     section#hero {
-        height: 85vh;
-        padding: 1.75rem 1.25rem;
+        height: auto;
+        min-height: 100svh;
+        min-height: 100dvh;
+        padding: 5.5rem var(--section-x) var(--space-3xl);
+        background: rgb(9, 10, 22);
+        justify-content: center;
+        align-items: center;
     }
 
     section.technologies {
-        background-color: rgba(6, 39, 35, 0.94);
+        background-color: rgb(6, 39, 35);
     }
 
     section.technologies .technologies-inner {
-        gap: 1.75rem;
+        gap: var(--space-lg);
         max-width: 100%;
     }
 
@@ -1216,10 +1265,6 @@ article.service > p {
         font-size: 0.82rem;
     }
 
-    #hero {
-        height: 85vh;
-        padding: 2.25rem 1.1rem;
-    }
 }
 
 /* General navigation styles */

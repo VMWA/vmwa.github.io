@@ -20,10 +20,18 @@
     });
 
     document.addEventListener('DOMContentLoaded', function() {
+        // On narrow viewports, AOS fade-left starts off-screen and causes sideways scroll
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            document.querySelectorAll('[data-aos="fade-left"]').forEach(function(el) {
+                el.setAttribute('data-aos', 'fade-up');
+            });
+        }
+
         if (typeof AOS !== 'undefined') {
             AOS.init({
                 duration: 1000,
-                once: true
+                once: true,
+                offset: 60
             });
         }
     });
