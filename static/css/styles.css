@@ -45,6 +45,8 @@ html {
     line-height: 1.4;
     /* clip avoids the overflow-x/hidden → overflow-y:auto pairing that creates nested scrollers */
     overflow-x: clip;
+    /* Keep hash targets clear of the fixed desktop nav */
+    scroll-padding-top: 4.5rem;
 }
 
 body {
@@ -150,7 +152,7 @@ main {
     line-height: 1.4;
     cursor: pointer;
     outline: none;
-    background-color: none;
+    background-color: transparent;
 }
 
 .icon-button .material-icons {
@@ -1314,18 +1316,21 @@ article.service > p {
 
 .hamburger {
     display: none;
-    background: none;
+    background: rgba(0, 0, 0, 0.45);
     border: none;
-    padding: 0.5rem;
+    border-radius: 999px;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
     cursor: pointer;
     z-index: 1001;
+    align-items: center;
+    justify-content: center;
 }
 
 .hamburger i {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: white;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3),
-                 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Mobile styles */
@@ -1334,6 +1339,13 @@ article.service > p {
         overflow: hidden;
         position: fixed;
         width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    html {
+        /* Mobile: only the floating menu button, not a full nav bar */
+        scroll-padding-top: 1rem;
     }
 
     .nav {
@@ -1344,7 +1356,7 @@ article.service > p {
     }
     
     .nav.active {
-        height: 100vh;
+        height: 100svh;
         background: rgba(0, 0, 0, 0.95);
     }
 
@@ -1353,7 +1365,7 @@ article.service > p {
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease-in-out;
-        height: 100vh;
+        height: 100svh;
     }
 
     .nav.active .nav-container {
@@ -1362,7 +1374,7 @@ article.service > p {
     }
 
     .hamburger {
-        display: block;
+        display: inline-flex;
         position: fixed;
         top: 1rem;
         right: 1rem;
@@ -1378,7 +1390,7 @@ article.service > p {
         gap: 0;
         padding-top: 4rem;
         background: rgba(0, 0, 0, 0.95);
-        height: 100vh;
+        height: 100svh;
     }
 
     .nav-link {
@@ -1503,5 +1515,16 @@ img {
     opacity: 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: 1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #logo,
+    .animate-slide-up,
+    .animate-fade-in {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none;
+    }
 }
 
