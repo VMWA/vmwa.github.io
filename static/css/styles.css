@@ -1355,9 +1355,13 @@ article.service > p {
         overflow: visible;
     }
     
+    /* inset:0 fills the live visual viewport; 100svh can leave a bottom gap */
     .nav.active {
-        height: 100svh;
+        inset: 0;
+        height: auto;
+        width: 100%;
         background: rgba(0, 0, 0, 0.95);
+        overflow: hidden;
     }
 
     .nav-container {
@@ -1365,7 +1369,7 @@ article.service > p {
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease-in-out;
-        height: 100svh;
+        height: 100%;
     }
 
     .nav.active .nav-container {
@@ -1382,15 +1386,15 @@ article.service > p {
 
     .nav-menu {
         display: flex;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        position: absolute;
+        inset: 0;
         flex-direction: column;
         gap: 0;
         padding-top: 4rem;
         background: rgba(0, 0, 0, 0.95);
-        height: 100svh;
+        height: auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-link {

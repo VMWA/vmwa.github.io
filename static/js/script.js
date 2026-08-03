@@ -5,19 +5,22 @@
     let lockedScrollY = 0;
 
     function setMenuOpen(open) {
-        nav.classList.toggle('active', open);
-        document.body.classList.toggle('nav-active', open);
+        const icon = hamburger.querySelector('i');
         hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
         hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
-
-        const icon = hamburger.querySelector('i');
         icon.classList.toggle('fa-bars', !open);
         icon.classList.toggle('fa-times', open);
 
         if (open) {
+            // Capture scroll BEFORE position:fixed — otherwise scrollY becomes 0
+            // and closing the menu always jumps back to the top.
             lockedScrollY = window.scrollY;
             document.body.style.top = '-' + lockedScrollY + 'px';
+            document.body.classList.add('nav-active');
+            nav.classList.add('active');
         } else {
+            nav.classList.remove('active');
+            document.body.classList.remove('nav-active');
             document.body.style.top = '';
             window.scrollTo(0, lockedScrollY);
         }
@@ -28,9 +31,32 @@
     });
 
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('active')) {
-                setMenuOpen(false);
+        link.addEventListener('click', (event) => {
+            if (!nav.classList.contains('active')) {
+                return;
+            }
+
+            const href = link.getAttribute('href');
+            const target = href && href.startsWith('#') ? document.querySelector(href) : null;
+            // Measure while the body is still scroll-locked (visual offset intact)
+            const targetY = target
+                ? lockedScrollY + target.getBoundingClientRect().top
+                : lockedScrollY;
+
+            nav.classList.remove('active');
+            document.body.classList.remove('nav-active');
+            document.body.style.top = '';
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Menu');
+            hamburger.querySelector('i').classList.add('fa-bars');
+            hamburger.querySelector('i').classList.remove('fa-times');
+
+            if (target) {
+                event.preventDefault();
+                window.scrollTo(0, targetY);
+                history.pushState(null, '', href);
+            } else {
+                window.scrollTo(0, lockedScrollY);
             }
         });
     });
