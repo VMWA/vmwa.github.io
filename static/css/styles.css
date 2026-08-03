@@ -1212,6 +1212,18 @@ article.service > p {
         font-size: 1.5rem;
     }
 
+    /*
+      Section titles: desktop rule is section:not(#hero) h2 { 2.375em } (~38px),
+      which beats the bare h2 override above. On phones that size overpowers the
+      hero name — keep Playfair present, not billboard-large.
+    */
+    section:not(#hero) h2,
+    footer h2 {
+        font-size: 1.85rem;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+    }
+
     .projects-section .grid-container {
         gap: 1rem;
         padding: 0.5rem;
@@ -1227,8 +1239,9 @@ article.service > p {
     }
 
     .hero-title {
-        font-size: clamp(1.2rem, 5vw, 1.75rem);
-        letter-spacing: 0.16em;
+        /* Brand should not read smaller than section titles */
+        font-size: clamp(1.45rem, 5.2vw, 1.85rem);
+        letter-spacing: 0.14em;
         margin-bottom: 0.85rem;
     }
     
