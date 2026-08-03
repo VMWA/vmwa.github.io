@@ -1143,16 +1143,22 @@ article.service > p {
         max-width: 100%;
     }
 
-    /* Hero: tall first screen, but grows with content — page scrolls, not the section */
+    /*
+      Hero: viewport-tall via svh only.
+      dvh tracks the live viewport as mobile chrome shows/hides, so the hero
+      (and everything below it) resizes mid-scroll — feels like a jump,
+      especially when scrolling up. svh is stable.
+    */
     section#hero {
         height: auto;
+        min-height: 100vh; /* fallback */
         min-height: 100svh;
-        min-height: 100dvh;
         padding: 5.5rem var(--section-x) var(--space-3xl);
         background: var(--bg-night);
         justify-content: center;
         align-items: center;
         overflow: visible;
+        overflow-anchor: none;
     }
 
     section.technologies {
