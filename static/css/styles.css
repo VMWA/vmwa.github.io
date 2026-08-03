@@ -1348,33 +1348,38 @@ article.service > p {
         scroll-padding-top: 1rem;
     }
 
+    /*
+      Full-screen overlay always (inset:0). Show/hide via opacity+visibility
+      on the whole layer — do NOT collapse height while children fade, or a
+      ghost "top bar" lingers after close.
+    */
     .nav {
-        height: 0;
-        padding: 0;
-        background: transparent;
-        overflow: visible;
-    }
-    
-    /* inset:0 fills the live visual viewport; 100svh can leave a bottom gap */
-    .nav.active {
         inset: 0;
         height: auto;
         width: 100%;
+        padding: 0;
         background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
         overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .nav.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-container {
         display: block;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease-in-out;
         height: 100%;
-    }
-
-    .nav.active .nav-container {
         opacity: 1;
         pointer-events: auto;
+        transition: none;
     }
 
     .hamburger {
